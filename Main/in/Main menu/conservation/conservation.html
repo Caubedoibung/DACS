@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
+    <link rel="stylesheet" href="/Main/out/style.css">
+    <link rel="stylesheet" href="/Main/in/Main menu/dashboard/dashboard.css">
+    <link rel="stylesheet" href="conservation.css">
+    <title>Conservation - Animal Library Management System</title>
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="ri-bard-fill"></i>
+                <h2>Animal Library</h2>
+            </div>
+
+            <div class="menu">
+                <h3>MAIN MENU</h3>
+                <ul>
+                    <li>
+                        <a href="/Main/in/Main menu/dashboard/dashboard.html"><i class="ri-dashboard-line"></i>
+                            Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="/Main/in/Main menu/animal/animals.html"><i class="ri-bear-smile-line"></i> Animals</a>
+                    </li>
+                    <li>
+                        <a href="/Main/in/Main menu/categories/categories.html"><i class="ri-folder-line"></i>
+                            Categories</a>
+                    </li>
+                    <li>
+                        <a href="/Main/in/Main menu/habitats/habitats.html"><i class="ri-earth-line"></i> Habitats</a>
+                    </li>
+                    <li class="active">
+                        <a href="/Main/in/Main menu/conservation/conservation.html"><i class="ri-shield-star-line"></i>
+                            Conservation</a>
+                    </li>
+                </ul>
+
+                <h3>MANAGEMENT</h3>
+                <ul>
+                    <li>
+                        <a href="/Main/in/Management/users/users.html"><i class="ri-user-line"></i> Users</a>
+                    </li>
+                    <li>
+                        <a href="/Main/in/Management/setting/settings.html"><i class="ri-settings-line"></i>
+                            Settings</a>
+                    </li>
+                    <li>
+                        <a href="/Main/in/Management/report/reports.html"><i class="ri-file-chart-line"></i>
+                            Reports</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="logout">
+                <a href="../login.html"><i class="ri-logout-box-line"></i> Logout</a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Navigation Bar -->
+            <nav class="top-nav">
+                <div class="search-bar">
+                    <i class="ri-search-line"></i>
+                    <input type="text" placeholder="Search conservation programs...">
+                </div>
+
+                <div class="user-area">
+                    <div class="notifications">
+                        <i class="ri-notification-3-line"></i>
+                        <span class="badge">3</span>
+                    </div>
+                    <div class="user-profile">
+                        <img src="../img/imgLogin.jpg" alt="User Profile" id="user-avatar">
+                        <div class="user-info">
+                            <h4 id="user-name">User</h4>
+                            <p id="user-role">Viewer</p>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Conservation Content -->
+            <div class="dashboard-content">
+                <div class="page-header">
+                    <h1>Conservation Programs</h1>
+                    <p>Track and manage conservation efforts and initiatives</p>
+                </div>
+
+                <!-- Conservation Overview -->
+                <div class="conservation-overview">
+                    <div class="overview-card">
+                        <div class="overview-icon">
+                            <i class="ri-shield-star-line"></i>
+                        </div>
+                        <div class="overview-details">
+                            <h3>Active Programs</h3>
+                            <p class="overview-value">24</p>
+                        </div>
+                    </div>
+                    <div class="overview-card">
+                        <div class="overview-icon">
+                            <i class="ri-bear-smile-line"></i>
+                        </div>
+                        <div class="overview-details">
+                            <h3>Protected Species</h3>
+                            <p class="overview-value">156</p>
+                        </div>
+                    </div>
+                    <div class="overview-card">
+                        <div class="overview-icon">
+                            <i class="ri-earth-line"></i>
+                        </div>
+                        <div class="overview-details">
+                            <h3>Protected Areas</h3>
+                            <p class="overview-value">42</p>
+                        </div>
+                    </div>
+                    <div class="overview-card">
+                        <div class="overview-icon">
+                            <i class="ri-funds-line"></i>
+                        </div>
+                        <div class="overview-details">
+                            <h3>Annual Budget</h3>
+                            <p class="overview-value">$4.2M</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Bar -->
+                <div class="action-bar">
+                    <div class="filters">
+                        <select id="status-filter">
+                            <option value="">All Statuses</option>
+                            <option value="active">Active</option>
+                            <option value="planned">Planned</option>
+                            <option value="completed">Completed</option>
+                        </select>
+                        <select id="region-filter">
+                            <option value="">All Regions</option>
+                            <option value="africa">Africa</option>
+                            <option value="asia">Asia</option>
+                            <option value="europe">Europe</option>
+                            <option value="north-america">North America</option>
+                            <option value="south-america">South America</option>
+                            <option value="australia">Australia</option>
+                            <option value="antarctica">Antarctica</option>
+                            <option value="oceans">Oceans</option>
+                        </select>
+                    </div>
+
+                    <div class="actions">
+                        <button id="export-btn" class="action-button secondary admin-only">
+                            <i class="ri-download-line"></i> Export
+                        </button>
+                        <button id="add-program-btn" class="action-button primary admin-only">
+                            <i class="ri-add-line"></i> Add Program
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Conservation Programs Table -->
+                <div class="conservation-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Program Name</th>
+                                <th>Target Species</th>
+                                <th>Region</th>
+                                <th>Status</th>
+                                <th>Budget</th>
+                                <th>Start Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="program-info">
+                                        <div class="program-icon"><i class="ri-shield-star-line"></i></div>
+                                        <div>
+                                            <p class="program-name">Tiger Conservation Initiative</p>
+                                            <p class="program-org">World Wildlife Fund</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>Bengal Tiger</td>
+                                <td>Asia</td>
+                                <td><span class="status active">Active</span></td>
+                                <td>$850,000</td>
+                                <td>Jan 15, 2022</td>
+                                <td>
+                                    <div class="table-actions">
+                                        <button class="action-btn view" onclick="viewProgram('tiger-conservation')"><i
+                                                class="ri-eye-line"></i></button>
+                                        <button class="action-btn edit admin-only"
+                                            onclick="editProgram('tiger-conservation')"><i
+                                                class="ri-edit-line"></i></button>
+                                        <button class="action-btn delete admin-only"
+                                            onclick="deleteProgram('tiger-conservation')"><i
+                                                class="ri-delete-bin-line"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="program-info">
+                                        <div class="program-icon"><i class="ri-shield-star-line"></i></div>
+                                        <div>
+                                            <p class="program-name">Coral Reef Restoration</p>
+                                            <p class="program-org">Ocean Conservation Society</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>Multiple Coral Species</td>
+                                <td>Oceans</td>
+                                <td><span class="status active">Active</span></td>
+                                <td>$1,200,000</td>
+                                <td>Mar 22, 2021</td>
+                                <td>
+                                    <div class="table-actions">
+                                        <button class="action-btn view" onclick="viewProgram('coral-restoration')"><i
+                                                class="ri-eye-line"></i></button>
+                                        <button class="action-btn edit admin-only"
+                                            onclick="editProgram('coral-restoration')"><i
+                                                class="ri-edit-line"></i></button>
+                                        <button class="action-btn delete admin-only"
+                                            onclick="deleteProgram('coral-restoration')"><i
+                                                class="ri-delete-bin-line"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="program-info">
+                                        <div class="program-icon"><i class="ri-shield-star-line"></i></div>
+                                        <div>
+                                            <p class="program-name">African Elephant Protection</p>
+                                            <p class="program-org">African Wildlife Foundation</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>African Elephant</td>
+                                <td>Africa</td>
+                                <td><span class="status active">Active</span></td>
+                                <td>$920,000</td>
+                                <td>Sep 10, 2022</td>
+                                <td>
+                                    <div class="table-actions">
+                                        <button class="action-btn view" onclick="viewProgram('elephant-protection')"><i
+                                                class="ri-eye-line"></i></button>
+                                        <button class="action-btn edit admin-only"
+                                            onclick="editProgram('elephant-protection')"><i
+                                                class="ri-edit-line"></i></button>
+                                        <button class="action-btn delete admin-only"
+                                            onclick="deleteProgram('elephant-protection')"><i
+                                                class="ri-delete-bin-line"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="program-info">
+                                        <div class="program-icon"><i class="ri-shield-star-line"></i></div>
+                                        <div>
+                                            <p class="program-name">Amazon Rainforest Preservation</p>
+                                            <p class="program-org">Rainforest Alliance</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>Multiple Species</td>
+                                <td>South America</td>
+                                <td><span class="status active">Active</span></td>
+                                <td>$1,500,000</td>
+                                <td>Jun 05, 2021</td>
+                                <td>
+                                    <div class="table-actions">
+                                        <button class="action-btn view" onclick="viewProgram('amazon-preservation')"><i
+                                                class="ri-eye-line"></i></button>
+                                        <button class="action-btn edit admin-only"
+                                            onclick="editProgram('amazon-preservation')"><i
+                                                class="ri-edit-line"></i></button>
+                                        <button class="action-btn delete admin-only"
+                                            onclick="deleteProgram('amazon-preservation')"><i
+                                                class="ri-delete-bin-line"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="program-info">
+                                        <div class="program-icon"><i class="ri-shield-star-line"></i></div>
+                                        <div>
+                                            <p class="program-name">Polar Bear Research</p>
+                                            <p class="program-org">Arctic Research Institute</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>Polar Bear</td>
+                                <td>Arctic</td>
+                                <td><span class="status planned">Planned</span></td>
+                                <td>$750,000</td>
+                                <td>Jan 15, 2024</td>
+                                <td>
+                                    <div class="table-actions">
+                                        <button class="action-btn view" onclick="viewProgram('polar-bear-research')"><i
+                                                class="ri-eye-line"></i></button>
+                                        <button class="action-btn edit admin-only"
+                                            onclick="editProgram('polar-bear-research')"><i
+                                                class="ri-edit-line"></i></button>
+                                        <button class="action-btn delete admin-only"
+                                            onclick="deleteProgram('polar-bear-research')"><i
+                                                class="ri-delete-bin-line"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="program-info">
+                                        <div class="program-icon"><i class="ri-shield-star-line"></i></div>
+                                        <div>
+                                            <p class="program-name">California Condor Recovery</p>
+                                            <p class="program-org">North American Conservation Fund</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>California Condor</td>
+                                <td>North America</td>
+                                <td><span class="status completed">Completed</span></td>
+                                <td>$620,000</td>
+                                <td>Apr 18, 2020</td>
+                                <td>
+                                    <div class="table-actions">
+                                        <button class="action-btn view" onclick="viewProgram('condor-recovery')"><i
+                                                class="ri-eye-line"></i></button>
+                                        <button class="action-btn edit admin-only"
+                                            onclick="editProgram('condor-recovery')"><i
+                                                class="ri-edit-line"></i></button>
+                                        <button class="action-btn delete admin-only"
+                                            onclick="deleteProgram('condor-recovery')"><i
+                                                class="ri-delete-bin-line"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <button class="page-btn prev"><i class="ri-arrow-left-s-line"></i></button>
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn next"><i class="ri-arrow-right-s-line"></i></button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Add Program Modal -->
+    <div class="modal" id="add-program-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add New Conservation Program</h2>
+                <button class="close-modal" onclick="closeModal()"><i class="ri-close-line"></i></button>
+            </div>
+            <div class="modal-body">
+                <form id="add-program-form">
+                    <div class="form-group">
+                        <label for="program-name">Program Name</label>
+                        <input type="text" id="program-name" placeholder="Enter program name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="organization">Organization</label>
+                        <input type="text" id="organization" placeholder="Enter organization name" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="target-species">Target Species</label>
+                            <input type="text" id="target-species" placeholder="Enter target species">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="program-region">Region</label>
+                            <select id="program-region" required>
+                                <option value="">Select Region</option>
+                                <option value="africa">Africa</option>
+                                <option value="asia">Asia</option>
+                                <option value="europe">Europe</option>
+                                <option value="north-america">North America</option>
+                                <option value="south-america">South America</option>
+                                <option value="australia">Australia</option>
+                                <option value="antarctica">Antarctica</option>
+                                <option value="oceans">Oceans</option>
+                                <option value="arctic">Arctic</option>
+                                <option value="global">Global</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="program-status">Status</label>
+                            <select id="program-status" required>
+                                <option value="">Select Status</option>
+                                <option value="active">Active</option>
+                                <option value="planned">Planned</option>
+                                <option value="completed">Completed</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="program-budget">Budget ($)</label>
+                            <input type="number" id="program-budget" placeholder="Enter budget amount" min="0" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="start-date">Start Date</label>
+                            <input type="date" id="start-date" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="end-date">End Date</label>
+                            <input type="date" id="end-date">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="program-description">Description</label>
+                        <textarea id="program-description" rows="4" placeholder="Enter program description"></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="cancel-btn" onclick="closeModal()">Cancel</button>
+                        <button type="submit" class="submit-btn">Add Program</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Program Details Modal -->
+    <div class="modal" id="program-details-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-program-name">Program Details</h2>
+                <button class="close-modal" onclick="closeDetailsModal()"><i class="ri-close-line"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="program-detail-content">
+                    <div class="program-detail-header">
+                        <div class="program-detail-org">
+                            <span id="modal-program-org"></span>
+                        </div>
+                        <div class="program-detail-status">
+                            <span id="modal-program-status" class="status"></span>
+                        </div>
+                    </div>
+
+                    <div class="program-detail-info">
+                        <div class="info-section">
+                            <h3>Program Information</h3>
+                            <div class="info-grid">
+                                <div class="info-item">
+                                    <span class="info-label">Target Species</span>
+                                    <span class="info-value" id="modal-target-species"></span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Region</span>
+                                    <span class="info-value" id="modal-region"></span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Budget</span>
+                                    <span class="info-value" id="modal-budget"></span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Start Date</span>
+                                    <span class="info-value" id="modal-start-date"></span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">End Date</span>
+                                    <span class="info-value" id="modal-end-date"></span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Duration</span>
+                                    <span class="info-value" id="modal-duration"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="info-section">
+                            <h3>Description</h3>
+                            <p id="modal-description" class="program-description"></p>
+                        </div>
+
+                        <div class="info-section">
+                            <h3>Key Achievements</h3>
+                            <ul id="modal-achievements" class="achievements-list">
+                                <!-- Will be populated by JavaScript -->
+                            </ul>
+                        </div>
+
+                        <div class="info-section">
+                            <h3>Related Species</h3>
+                            <div class="species-grid" id="modal-species-grid">
+                                <!-- Will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer admin-only">
+                <button class="edit-btn" onclick="editProgramFromModal()">Edit Program</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/Main/in/Main menu/dashboard/dashboard.js"></script>
+    <script src="conservation.js"></script>
+</body>
+
+</html>

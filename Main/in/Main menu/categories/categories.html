@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
+    <link rel="stylesheet" href="/Main/out/style.css">
+    <link rel="stylesheet" href="/Main/in/Main menu/dashboard/dashboard.css">
+    <link rel="stylesheet" href="categories.css">
+    <title>Categories - Animal Library Management System</title>
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="ri-bard-fill"></i>
+                <h2>Animal Library</h2>
+            </div>
+
+            <div class="menu">
+                <h3>MAIN MENU</h3>
+                <ul>
+                    <li>
+                        <a href="/Main/in/Main menu/dashboard/dashboard.html"><i class="ri-dashboard-line"></i>
+                            Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="/Main/in/Main menu/animal/animals.html"><i class="ri-bear-smile-line"></i> Animals</a>
+                    </li>
+                    <li class="active">
+                        <a href="/Main/in/Main menu/categories/categories.html"><i class="ri-folder-line"></i>
+                            Categories</a>
+                    </li>
+                    <li>
+                        <a href="/Main/in/Main menu/habitats/habitats.html"><i class="ri-earth-line"></i> Habitats</a>
+                    </li>
+                    <li>
+                        <a href="/Main/in/Main menu/conservation/conservation.html"><i class="ri-shield-star-line"></i>
+                            Conservation</a>
+                    </li>
+                </ul>
+
+                <h3>MANAGEMENT</h3>
+                <ul>
+                    <li>
+                        <a href="/Main/in/Management/users/users.html"><i class="ri-user-line"></i> Users</a>
+                    </li>
+                    <li>
+                        <a href="/Main/in/Management/setting/settings.html"><i class="ri-settings-line"></i>
+                            Settings</a>
+                    </li>
+                    <li>
+                        <a href="/Main/in/Management/report/reports.html"><i class="ri-file-chart-line"></i>
+                            Reports</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="logout">
+                <a href="/Main/out/login.html"><i class="ri-logout-box-line"></i> Logout</a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Navigation Bar -->
+            <nav class="top-nav">
+                <div class="search-bar">
+                    <i class="ri-search-line"></i>
+                    <input type="text" placeholder="Search for categories...">
+                </div>
+
+                <div class="user-area">
+                    <div class="notifications">
+                        <i class="ri-notification-3-line"></i>
+                        <span class="badge">3</span>
+                    </div>
+                    <div class="user-profile">
+                        <img src="../img/imgLogin.jpg" alt="User Profile" id="user-avatar">
+                        <div class="user-info">
+                            <h4 id="user-name">User</h4>
+                            <p id="user-role">Viewer</p>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Categories Content -->
+            <div class="dashboard-content">
+                <div class="page-header">
+                    <h1>Categories</h1>
+                    <p>Manage animal categories and classifications</p>
+                </div>
+
+                <!-- Action Bar -->
+                <div class="action-bar">
+                    <div class="filters">
+                        <select id="status-filter">
+                            <option value="">All Statuses</option>
+                            <option value="active">Active</option>
+                            <option value="inactive">Inactive</option>
+                        </select>
+                    </div>
+
+                    <div class="actions">
+                        <button id="export-btn" class="action-button secondary admin-only">
+                            <i class="ri-download-line"></i> Export
+                        </button>
+                        <button id="add-category-btn" class="action-button primary admin-only">
+                            <i class="ri-add-line"></i> Add Category
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Categories Grid -->
+                <div class="categories-grid">
+                    <div class="category-card">
+                        <div class="category-icon" style="background-color: rgba(163, 230, 53, 0.2);">
+                            <i class="ri-bear-smile-line" style="color: #a3e635;"></i>
+                        </div>
+                        <div class="category-details">
+                            <h3>Mammals</h3>
+                            <p>Warm-blooded vertebrates characterized by hair/fur, mammary glands, and a neocortex</p>
+                            <div class="category-meta">
+                                <span><i class="ri-file-list-line"></i> 248 Animals</span>
+                                <span class="status active">Active</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="card-btn view" onclick="viewCategory('mammals')"><i
+                                        class="ri-eye-line"></i></button>
+                                <button class="card-btn edit admin-only" onclick="editCategory('mammals')"><i
+                                        class="ri-edit-line"></i></button>
+                                <button class="card-btn delete admin-only" onclick="deleteCategory('mammals')"><i
+                                        class="ri-delete-bin-line"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="category-icon" style="background-color: rgba(45, 137, 168, 0.2);">
+                            <i class="ri-flight-takeoff-line" style="color: #2d89a8;"></i>
+                        </div>
+                        <div class="category-details">
+                            <h3>Birds</h3>
+                            <p>Warm-blooded vertebrates characterized by feathers, beaks, and laying eggs</p>
+                            <div class="category-meta">
+                                <span><i class="ri-file-list-line"></i> 186 Animals</span>
+                                <span class="status active">Active</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="card-btn view" onclick="viewCategory('birds')"><i
+                                        class="ri-eye-line"></i></button>
+                                <button class="card-btn edit admin-only" onclick="editCategory('birds')"><i
+                                        class="ri-edit-line"></i></button>
+                                <button class="card-btn delete admin-only" onclick="deleteCategory('birds')"><i
+                                        class="ri-delete-bin-line"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="category-icon" style="background-color: rgba(248, 54, 0, 0.2);">
+                            <i class="ri-snake-line" style="color: #f83600;"></i>
+                        </div>
+                        <div class="category-details">
+                            <h3>Reptiles</h3>
+                            <p>Cold-blooded vertebrates characterized by scales, laying eggs, and ectothermic metabolism
+                            </p>
+                            <div class="category-meta">
+                                <span><i class="ri-file-list-line"></i> 142 Animals</span>
+                                <span class="status active">Active</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="card-btn view" onclick="viewCategory('reptiles')"><i
+                                        class="ri-eye-line"></i></button>
+                                <button class="card-btn edit admin-only" onclick="editCategory('reptiles')"><i
+                                        class="ri-edit-line"></i></button>
+                                <button class="card-btn delete admin-only" onclick="deleteCategory('reptiles')"><i
+                                        class="ri-delete-bin-line"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="category-icon" style="background-color: rgba(15, 216, 80, 0.2);">
+                            <i class="ri-water-flash-line" style="color: #0fd850;"></i>
+                        </div>
+                        <div class="category-details">
+                            <h3>Amphibians</h3>
+                            <p>Cold-blooded vertebrates that live both in water and on land during their life cycle</p>
+                            <div class="category-meta">
+                                <span><i class="ri-file-list-line"></i> 98 Animals</span>
+                                <span class="status active">Active</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="card-btn view" onclick="viewCategory('amphibians')"><i
+                                        class="ri-eye-line"></i></button>
+                                <button class="card-btn edit admin-only" onclick="editCategory('amphibians')"><i
+                                        class="ri-edit-line"></i></button>
+                                <button class="card-btn delete admin-only" onclick="deleteCategory('amphibians')"><i
+                                        class="ri-delete-bin-line"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="category-icon" style="background-color: rgba(45, 137, 168, 0.2);">
+                            <i class="ri-fish-line" style="color: #2d89a8;"></i>
+                        </div>
+                        <div class="category-details">
+                            <h3>Fish</h3>
+                            <p>Aquatic vertebrates characterized by gills, fins, and living in water</p>
+                            <div class="category-meta">
+                                <span><i class="ri-file-list-line"></i> 156 Animals</span>
+                                <span class="status active">Active</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="card-btn view" onclick="viewCategory('fish')"><i
+                                        class="ri-eye-line"></i></button>
+                                <button class="card-btn edit admin-only" onclick="editCategory('fish')"><i
+                                        class="ri-edit-line"></i></button>
+                                <button class="card-btn delete admin-only" onclick="deleteCategory('fish')"><i
+                                        class="ri-delete-bin-line"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="category-card">
+                        <div class="category-icon" style="background-color: rgba(248, 212, 35, 0.2);">
+                            <i class="ri-bug-line" style="color: #f9d423;"></i>
+                        </div>
+                        <div class="category-details">
+                            <h3>Invertebrates</h3>
+                            <p>Animals without a backbone or spinal column, including insects, mollusks, and more</p>
+                            <div class="category-meta">
+                                <span><i class="ri-file-list-line"></i> 418 Animals</span>
+                                <span class="status active">Active</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="card-btn view" onclick="viewCategory('invertebrates')"><i
+                                        class="ri-eye-line"></i></button>
+                                <button class="card-btn edit admin-only" onclick="editCategory('invertebrates')"><i
+                                        class="ri-edit-line"></i></button>
+                                <button class="card-btn delete admin-only" onclick="deleteCategory('invertebrates')"><i
+                                        class="ri-delete-bin-line"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <button class="page-btn prev"><i class="ri-arrow-left-s-line"></i></button>
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn next"><i class="ri-arrow-right-s-line"></i></button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Add Category Modal -->
+    <div class="modal" id="add-category-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add New Category</h2>
+                <button class="close-modal" onclick="closeModal()"><i class="ri-close-line"></i></button>
+            </div>
+            <div class="modal-body">
+                <form id="add-category-form">
+                    <div class="form-group">
+                        <label for="category-name">Category Name</label>
+                        <input type="text" id="category-name" placeholder="Enter category name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category-description">Description</label>
+                        <textarea id="category-description" rows="4"
+                            placeholder="Enter category description"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category-icon">Icon</label>
+                        <select id="category-icon" required>
+                            <option value="">Select Icon</option>
+                            <option value="ri-bear-smile-line">Mammal</option>
+                            <option value="ri-flight-takeoff-line">Bird</option>
+                            <option value="ri-snake-line">Reptile</option>
+                            <option value="ri-water-flash-line">Amphibian</option>
+                            <option value="ri-fish-line">Fish</option>
+                            <option value="ri-bug-line">Invertebrate</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="category-status">Status</label>
+                        <select id="category-status" required>
+                            <option value="active">Active</option>
+                            <option value="inactive">Inactive</option>
+                        </select>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="cancel-btn" onclick="closeModal()">Cancel</button>
+                        <button type="submit" class="submit-btn">Add Category</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Category Details Modal -->
+    <div class="modal" id="category-details-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-category-name">Category Details</h2>
+                <button class="close-modal" onclick="closeDetailsModal()"><i class="ri-close-line"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="category-detail-content">
+                    <div class="category-detail-header">
+                        <div id="modal-category-icon" class="category-icon"></div>
+                        <div class="category-info">
+                            <p id="modal-category-description" class="category-description"></p>
+                            <div class="category-stats">
+                                <div class="stat-item">
+                                    <span class="stat-value" id="modal-animal-count">0</span>
+                                    <span class="stat-label">Animals</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value" id="modal-endangered-count">0</span>
+                                    <span class="stat-label">Endangered</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-value" id="modal-habitat-count">0</span>
+                                    <span class="stat-label">Habitats</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="category-animals">
+                        <h3>Animals in this Category</h3>
+                        <div class="animal-list">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Animal</th>
+                                        <th>Scientific Name</th>
+                                        <th>Status</th>
+                                        <th>Habitat</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="category-animals-list">
+                                    <!-- Animal list will be populated by JavaScript -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer admin-only">
+                <button class="edit-btn" onclick="editCategoryFromModal()">Edit Category</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/Main/in/Main menu/dashboard/dashboard.js"></script>
+    <script src="categories.js"></script>
+</body>
+
+</html>

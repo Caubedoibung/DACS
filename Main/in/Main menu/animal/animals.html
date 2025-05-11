@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
+    <link rel="stylesheet" href="/Main/out/style.css">
+    <link rel="stylesheet" href="/Main/in/Main menu/dashboard/dashboard.css">
+    <link rel="stylesheet" href="animals.css">
+    <title>Animals - Animal Library Management System</title>
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="ri-bard-fill"></i>
+                <h2>Animal Library</h2>
+            </div>
+
+            <div class="menu">
+                <h3>MAIN MENU</h3>
+                <ul>
+                    <li>
+                        <a href="/Main/in/Main menu/dashboard/dashboard.html"><i class="ri-dashboard-line"></i>
+                            Dashboard</a>
+                    </li>
+                    <li class="active">
+                        <a href="animals.html"><i class="ri-bear-smile-line"></i> Animals</a>
+                    </li>
+                    <li>
+                        <a href="/Main/in/Main menu/categories/categories.html"><i class="ri-folder-line"></i>
+                            Categories</a>
+                    </li>
+                    <li>
+                        <a href="/Main/in/Main menu/habitats/habitats.html"><i class="ri-earth-line"></i> Habitats</a>
+                    </li>
+                    <li>
+                        <a href="/Main/in/Main menu/conservation/conservation.html"><i class="ri-shield-star-line"></i>
+                            Conservation</a>
+                    </li>
+                </ul>
+
+                <h3>MANAGEMENT</h3>
+                <ul>
+                    <li>
+                        <a href="/Main/in/Management/users/users.html"><i class="ri-user-line"></i> Users</a>
+                    </li>
+                    <li>
+                        <a href="/Main/in/Management/setting/settings.html"><i class="ri-settings-line"></i>
+                            Settings</a>
+                    </li>
+                    <li>
+                        <a href="/Main/in/Management/report/reports.html"><i class="ri-file-chart-line"></i> Reports</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="logout">
+                <a href="/Main/out/login.html"><i class="ri-logout-box-line"></i> Logout</a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Navigation Bar -->
+            <nav class="top-nav">
+                <div class="search-bar">
+                    <i class="ri-search-line"></i>
+                    <input type="text" placeholder="Search for animals...">
+                </div>
+
+                <div class="user-area">
+                    <div class="notifications">
+                        <i class="ri-notification-3-line"></i>
+                        <span class="badge">3</span>
+                    </div>
+                    <div class="user-profile">
+                        <img src="../img/imgLogin.jpg" alt="User Profile">
+                        <div class="user-info">
+                            <h4>Admin User</h4>
+                            <p>Administrator</p>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Animals Content -->
+            <div class="dashboard-content">
+                <div class="page-header">
+                    <h1>Animals</h1>
+                    <p>Manage all animals in the library</p>
+                </div>
+
+                <!-- Action Bar -->
+                <div class="action-bar">
+                    <div class="filters">
+                        <select id="category-filter">
+                            <option value="">All Categories</option>
+                            <option value="mammals">Mammals</option>
+                            <option value="birds">Birds</option>
+                            <option value="reptiles">Reptiles</option>
+                            <option value="amphibians">Amphibians</option>
+                            <option value="fish">Fish</option>
+                            <option value="invertebrates">Invertebrates</option>
+                        </select>
+
+                        <select id="status-filter">
+                            <option value="">All Statuses</option>
+                            <option value="least-concern">Least Concern</option>
+                            <option value="vulnerable">Vulnerable</option>
+                            <option value="endangered">Endangered</option>
+                            <option value="critical">Critically Endangered</option>
+                        </select>
+
+                        <select id="habitat-filter">
+                            <option value="">All Habitats</option>
+                            <option value="terrestrial">Terrestrial</option>
+                            <option value="aquatic">Aquatic</option>
+                            <option value="aerial">Aerial</option>
+                        </select>
+                    </div>
+
+                    <div class="actions">
+                        <button id="export-btn" class="action-button secondary">
+                            <i class="ri-download-line"></i> Export
+                        </button>
+                        <button id="add-animal-btn" class="action-button primary">
+                            <i class="ri-add-line"></i> Add Animal
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Animals Grid/List View Toggle -->
+                <div class="view-toggle">
+                    <button class="view-btn active" data-view="grid">
+                        <i class="ri-grid-line"></i> Grid
+                    </button>
+                    <button class="view-btn" data-view="list">
+                        <i class="ri-list-check"></i> List
+                    </button>
+                </div>
+
+                <!-- Animals Grid View -->
+                <div class="animals-grid active-view">
+                    <div class="animal-card">
+                        <div class="animal-image">
+                            <img src="../img/imglion.jpg" alt="African Lion">
+                            <span class="status vulnerable">Vulnerable</span>
+                        </div>
+                        <div class="animal-details">
+                            <h3>African Lion</h3>
+                            <p class="scientific-name">Panthera leo</p>
+                            <div class="animal-meta">
+                                <span><i class="ri-folder-line"></i> Mammals</span>
+                                <span><i class="ri-earth-line"></i> Africa</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="card-btn view"><i class="ri-eye-line"></i></button>
+                                <button class="card-btn edit"><i class="ri-edit-line"></i></button>
+                                <button class="card-btn delete"><i class="ri-delete-bin-line"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="animal-card">
+                        <div class="animal-image">
+                            <img src="../img/imgeagle.jpg" alt="Bald Eagle">
+                            <span class="status least-concern">Least Concern</span>
+                        </div>
+                        <div class="animal-details">
+                            <h3>Bald Eagle</h3>
+                            <p class="scientific-name">Haliaeetus leucocephalus</p>
+                            <div class="animal-meta">
+                                <span><i class="ri-folder-line"></i> Birds</span>
+                                <span><i class="ri-earth-line"></i> North America</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="card-btn view"><i class="ri-eye-line"></i></button>
+                                <button class="card-btn edit"><i class="ri-edit-line"></i></button>
+                                <button class="card-btn delete"><i class="ri-delete-bin-line"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="animal-card">
+                        <div class="animal-image">
+                            <img src="../img/imgshark.jpg" alt="Great White Shark">
+                            <span class="status endangered">Endangered</span>
+                        </div>
+                        <div class="animal-details">
+                            <h3>Great White Shark</h3>
+                            <p class="scientific-name">Carcharodon carcharias</p>
+                            <div class="animal-meta">
+                                <span><i class="ri-folder-line"></i> Fish</span>
+                                <span><i class="ri-earth-line"></i> Oceans</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="card-btn view"><i class="ri-eye-line"></i></button>
+                                <button class="card-btn edit"><i class="ri-edit-line"></i></button>
+                                <button class="card-btn delete"><i class="ri-delete-bin-line"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="animal-card">
+                        <div class="animal-image">
+                            <img src="../img/imgfrog.jpg" alt="Poison Dart Frog">
+                            <span class="status critical">Critically Endangered</span>
+                        </div>
+                        <div class="animal-details">
+                            <h3>Poison Dart Frog</h3>
+                            <p class="scientific-name">Dendrobatidae</p>
+                            <div class="animal-meta">
+                                <span><i class="ri-folder-line"></i> Amphibians</span>
+                                <span><i class="ri-earth-line"></i> South America</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="card-btn view"><i class="ri-eye-line"></i></button>
+                                <button class="card-btn edit"><i class="ri-edit-line"></i></button>
+                                <button class="card-btn delete"><i class="ri-delete-bin-line"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="animal-card">
+                        <div class="animal-image">
+                            <img src="../img/imgsnake.jpg" alt="King Cobra">
+                            <span class="status vulnerable">Vulnerable</span>
+                        </div>
+                        <div class="animal-details">
+                            <h3>King Cobra</h3>
+                            <p class="scientific-name">Ophiophagus hannah</p>
+                            <div class="animal-meta">
+                                <span><i class="ri-folder-line"></i> Reptiles</span>
+                                <span><i class="ri-earth-line"></i> Asia</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="card-btn view"><i class="ri-eye-line"></i></button>
+                                <button class="card-btn edit"><i class="ri-edit-line"></i></button>
+                                <button class="card-btn delete"><i class="ri-delete-bin-line"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="animal-card">
+                        <div class="animal-image">
+                            <img src="../img/imgjellyfish.jpg" alt="Box Jellyfish">
+                            <span class="status least-concern">Least Concern</span>
+                        </div>
+                        <div class="animal-details">
+                            <h3>Box Jellyfish</h3>
+                            <p class="scientific-name">Cubozoa</p>
+                            <div class="animal-meta">
+                                <span><i class="ri-folder-line"></i> Invertebrates</span>
+                                <span><i class="ri-earth-line"></i> Oceans</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="card-btn view"><i class="ri-eye-line"></i></button>
+                                <button class="card-btn edit"><i class="ri-edit-line"></i></button>
+                                <button class="card-btn delete"><i class="ri-delete-bin-line"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Animals List View (Hidden by default) -->
+                <div class="animals-list">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Animal</th>
+                                <th>Scientific Name</th>
+                                <th>Category</th>
+                                <th>Habitat</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="animal-info">
+                                        <img src="../img/imglion.jpg" alt="Lion">
+                                        <span>African Lion</span>
+                                    </div>
+                                </td>
+                                <td>Panthera leo</td>
+                                <td>Mammals</td>
+                                <td>Africa</td>
+                                <td><span class="status vulnerable">Vulnerable</span></td>
+                                <td>
+                                    <div class="actions">
+                                        <button class="action-btn view"><i class="ri-eye-line"></i></button>
+                                        <button class="action-btn edit"><i class="ri-edit-line"></i></button>
+                                        <button class="action-btn delete"><i class="ri-delete-bin-line"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="animal-info">
+                                        <img src="../img/imgeagle.jpg" alt="Eagle">
+                                        <span>Bald Eagle</span>
+                                    </div>
+                                </td>
+                                <td>Haliaeetus leucocephalus</td>
+                                <td>Birds</td>
+                                <td>North America</td>
+                                <td><span class="status least-concern">Least Concern</span></td>
+                                <td>
+                                    <div class="actions">
+                                        <button class="action-btn view"><i class="ri-eye-line"></i></button>
+                                        <button class="action-btn edit"><i class="ri-edit-line"></i></button>
+                                        <button class="action-btn delete"><i class="ri-delete-bin-line"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="animal-info">
+                                        <img src="../img/imgshark.jpg" alt="Shark">
+                                        <span>Great White Shark</span>
+                                    </div>
+                                </td>
+                                <td>Carcharodon carcharias</td>
+                                <td>Fish</td>
+                                <td>Oceans</td>
+                                <td><span class="status endangered">Endangered</span></td>
+                                <td>
+                                    <div class="actions">
+                                        <button class="action-btn view"><i class="ri-eye-line"></i></button>
+                                        <button class="action-btn edit"><i class="ri-edit-line"></i></button>
+                                        <button class="action-btn delete"><i class="ri-delete-bin-line"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="animal-info">
+                                        <img src="../img/imgfrog.jpg" alt="Frog">
+                                        <span>Poison Dart Frog</span>
+                                    </div>
+                                </td>
+                                <td>Dendrobatidae</td>
+                                <td>Amphibians</td>
+                                <td>South America</td>
+                                <td><span class="status critical">Critically Endangered</span></td>
+                                <td>
+                                    <div class="actions">
+                                        <button class="action-btn view"><i class="ri-eye-line"></i></button>
+                                        <button class="action-btn edit"><i class="ri-edit-line"></i></button>
+                                        <button class="action-btn delete"><i class="ri-delete-bin-line"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="animal-info">
+                                        <img src="../img/imgsnake.jpg" alt="Snake">
+                                        <span>King Cobra</span>
+                                    </div>
+                                </td>
+                                <td>Ophiophagus hannah</td>
+                                <td>Reptiles</td>
+                                <td>Asia</td>
+                                <td><span class="status vulnerable">Vulnerable</span></td>
+                                <td>
+                                    <div class="actions">
+                                        <button class="action-btn view"><i class="ri-eye-line"></i></button>
+                                        <button class="action-btn edit"><i class="ri-edit-line"></i></button>
+                                        <button class="action-btn delete"><i class="ri-delete-bin-line"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="animal-info">
+                                        <img src="../img/imgjellyfish.jpg" alt="Jellyfish">
+                                        <span>Box Jellyfish</span>
+                                    </div>
+                                </td>
+                                <td>Cubozoa</td>
+                                <td>Invertebrates</td>
+                                <td>Oceans</td>
+                                <td><span class="status least-concern">Least Concern</span></td>
+                                <td>
+                                    <div class="actions">
+                                        <button class="action-btn view"><i class="ri-eye-line"></i></button>
+                                        <button class="action-btn edit"><i class="ri-edit-line"></i></button>
+                                        <button class="action-btn delete"><i class="ri-delete-bin-line"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <button class="page-btn prev"><i class="ri-arrow-left-s-line"></i></button>
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn">3</button>
+                    <span class="page-ellipsis">...</span>
+                    <button class="page-btn">10</button>
+                    <button class="page-btn next"><i class="ri-arrow-right-s-line"></i></button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Add Animal Modal (Hidden by default) -->
+    <div class="modal" id="add-animal-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add New Animal</h2>
+                <button class="close-modal"><i class="ri-close-line"></i></button>
+            </div>
+            <div class="modal-body">
+                <form id="add-animal-form">
+                    <div class="form-group">
+                        <label for="animal-name">Animal Name</label>
+                        <input type="text" id="animal-name" placeholder="Enter animal name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="scientific-name">Scientific Name</label>
+                        <input type="text" id="scientific-name" placeholder="Enter scientific name" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="category">Category</label>
+                            <select id="category" required>
+                                <option value="">Select Category</option>
+                                <option value="mammals">Mammals</option>
+                                <option value="birds">Birds</option>
+                                <option value="reptiles">Reptiles</option>
+                                <option value="amphibians">Amphibians</option>
+                                <option value="fish">Fish</option>
+                                <option value="invertebrates">Invertebrates</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="conservation-status">Conservation Status</label>
+                            <select id="conservation-status" required>
+                                <option value="">Select Status</option>
+                                <option value="least-concern">Least Concern</option>
+                                <option value="vulnerable">Vulnerable</option>
+                                <option value="endangered">Endangered</option>
+                                <option value="critical">Critically Endangered</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="habitat">Habitat</label>
+                        <input type="text" id="habitat" placeholder="Enter habitat">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea id="description" rows="4" placeholder="Enter description"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="animal-image">Upload Image</label>
+                        <input type="file" id="animal-image" accept="image/*">
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="cancel-btn">Cancel</button>
+                        <button type="submit" class="submit-btn">Add Animal</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="/Main/in/Main menu/dashboard/dashboard.js"></script>
+    <script src="animals.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
+    <link rel="stylesheet" href="/Main/out/style.css">
+    <link rel="stylesheet" href="/Main/in/Main menu/dashboard/dashboard.css">
+    <link rel="stylesheet" href="settings.css">
+    <title>Settings - Animal Library Management System</title>
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="ri-bard-fill"></i>
+                <h2>Animal Library</h2>
+            </div>
+
+            <div class="menu">
+                <h3>MAIN MENU</h3>
+                <ul>
+                    <li>
+                        <a href="/Main/in/Main menu/dashboard/dashboard.html"><i class="ri-dashboard-line"></i>
+                            Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="/Main/in/Main menu/animal/animals.html"><i class="ri-bear-smile-line"></i> Animals</a>
+                    </li>
+                    <li>
+                        <a href="/Main/in/Main menu/categories/categories.html"><i class="ri-folder-line"></i>
+                            Categories</a>
+                    </li>
+                    <li>
+                        <a href="/Main/in/Main menu/habitats/habitats.html"><i class="ri-earth-line"></i> Habitats</a>
+                    </li>
+                    <li>
+                        <a href="/Main/in/Main menu/conservation/conservation.html"><i class="ri-shield-star-line"></i>
+                            Conservation</a>
+                    </li>
+                </ul>
+
+
+                <h3>MANAGEMENT</h3>
+                <ul>
+                    <li>
+                        <a href="/Main/in/Management/users/users.html"><i class="ri-user-line"></i> Users</a>
+                    </li>
+                    <li class="active">
+                        <a href="/Main/in/Management/setting/settings.html"><i class="ri-settings-line"></i>
+                            Settings</a>
+                    </li>
+                    <li>
+                        <a href="/Main/in/Management/report/reports.html"><i class="ri-file-chart-line"></i> Reports</a>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="logout">
+                <a href="/Main/out/login.html"><i class="ri-logout-box-line"></i> Logout</a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Navigation Bar -->
+            <nav class="top-nav">
+                <div class="search-bar">
+                    <i class="ri-search-line"></i>
+                    <input type="text" placeholder="Search settings...">
+                </div>
+
+                <div class="user-area">
+                    <div class="notifications">
+                        <i class="ri-notification-3-line"></i>
+                        <span class="badge">3</span>
+                    </div>
+                    <div class="user-profile">
+                        <img src="../img/imgLogin.jpg" alt="User Profile" id="user-avatar">
+                        <div class="user-info">
+                            <h4 id="user-name">User</h4>
+                            <p id="user-role">Viewer</p>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Settings Content -->
+            <div class="dashboard-content">
+                <div class="page-header">
+                    <h1>System Settings</h1>
+                    <p>Configure and manage system preferences</p>
+                </div>
+
+                <!-- Settings Layout -->
+                <div class="settings-layout">
+                    <!-- Settings Navigation -->
+                    <div class="settings-nav">
+                        <ul>
+                            <li class="active" data-tab="general">
+                                <i class="ri-settings-line"></i> General
+                            </li>
+                            <li data-tab="appearance">
+                                <i class="ri-palette-line"></i> Appearance
+                            </li>
+                            <li data-tab="notifications">
+                                <i class="ri-notification-3-line"></i> Notifications
+                            </li>
+                            <li data-tab="security">
+                                <i class="ri-shield-keyhole-line"></i> Security
+                            </li>
+                            <li data-tab="backup">
+                                <i class="ri-database-2-line"></i> Backup & Restore
+                            </li>
+                            <li data-tab="api">
+                                <i class="ri-code-s-slash-line"></i> API Settings
+                            </li>
+                            <li data-tab="logs">
+                                <i class="ri-file-list-3-line"></i> System Logs
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Settings Content -->
+                    <div class="settings-content">
+                        <!-- General Settings -->
+                        <div class="settings-tab active" id="general-tab">
+                            <h2>General Settings</h2>
+                            <div class="settings-section">
+                                <h3>System Information</h3>
+                                <div class="settings-form">
+                                    <div class="form-group">
+                                        <label for="system-name">System Name</label>
+                                        <input type="text" id="system-name" value="Animal Library Management System">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="organization">Organization</label>
+                                        <input type="text" id="organization" value="Wildlife Conservation Foundation">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="contact-email">Contact Email</label>
+                                        <input type="email" id="contact-email" value="contact@wildlifeconservation.org">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="timezone">Timezone</label>
+                                        <select id="timezone">
+                                            <option value="UTC-8">Pacific Time (UTC-8)</option>
+                                            <option value="UTC-7">Mountain Time (UTC-7)</option>
+                                            <option value="UTC-6">Central Time (UTC-6)</option>
+                                            <option value="UTC-5" selected>Eastern Time (UTC-5)</option>
+                                            <option value="UTC+0">Greenwich Mean Time (UTC+0)</option>
+                                            <option value="UTC+1">Central European Time (UTC+1)</option>
+                                            <option value="UTC+8">China Standard Time (UTC+8)</option>
+                                            <option value="UTC+9">Japan Standard Time (UTC+9)</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="date-format">Date Format</label>
+                                        <select id="date-format">
+                                            <option value="MM/DD/YYYY" selected>MM/DD/YYYY</option>
+                                            <option value="DD/MM/YYYY">DD/MM/YYYY</option>
+                                            <option value="YYYY-MM-DD">YYYY-MM-DD</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="settings-section">
+                                <h3>Content Settings</h3>
+                                <div class="settings-form">
+                                    <div class="form-group">
+                                        <label for="items-per-page">Items Per Page</label>
+                                        <select id="items-per-page">
+                                            <option value="10">10</option>
+                                            <option value="20" selected>20</option>
+                                            <option value="50">50</option>
+                                            <option value="100">100</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="default-sort">Default Sort Order</label>
+                                        <select id="default-sort">
+                                            <option value="name-asc" selected>Name (A-Z)</option>
+                                            <option value="name-desc">Name (Z-A)</option>
+                                            <option value="date-asc">Date (Oldest First)</option>
+                                            <option value="date-desc">Date (Newest First)</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group checkbox-group">
+                                        <input type="checkbox" id="enable-comments" checked>
+                                        <label for="enable-comments">Enable Comments</label>
+                                    </div>
+                                    <div class="form-group checkbox-group">
+                                        <input type="checkbox" id="enable-ratings" checked>
+                                        <label for="enable-ratings">Enable Ratings</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button class="cancel-btn">Reset to Default</button>
+                                <button class="save-btn">Save Changes</button>
+                            </div>
+                        </div>
+
+                        <!-- Appearance Settings -->
+                        <div class="settings-tab" id="appearance-tab">
+                            <h2>Appearance Settings</h2>
+                            <div class="settings-section">
+                                <h3>Theme Settings</h3>
+                                <div class="settings-form">
+                                    <div class="form-group">
+                                        <label>Theme Mode</label>
+                                        <div class="theme-options">
+                                            <div class="theme-option active">
+                                                <div class="theme-preview dark"></div>
+                                                <span>Dark</span>
+                                            </div>
+                                            <div class="theme-option">
+                                                <div class="theme-preview light"></div>
+                                                <span>Light</span>
+                                            </div>
+                                            <div class="theme-option">
+                                                <div class="theme-preview auto"></div>
+                                                <span>Auto</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Accent Color</label>
+                                        <div class="color-options">
+                                            <div class="color-option active" style="--color: #a3e635;"></div>
+                                            <div class="color-option" style="--color: #2d89a8;"></div>
+                                            <div class="color-option" style="--color: #f9d423;"></div>
+                                            <div class="color-option" style="--color: #f83600;"></div>
+                                            <div class="color-option" style="--color: #8b5cf6;"></div>
+                                            <div class="color-option" style="--color: #ec4899;"></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="font-size">Font Size</label>
+                                        <select id="font-size">
+                                            <option value="small">Small</option>
+                                            <option value="medium" selected>Medium</option>
+                                            <option value="large">Large</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="settings-section">
+                                <h3>Layout Settings</h3>
+                                <div class="settings-form">
+                                    <div class="form-group checkbox-group">
+                                        <input type="checkbox" id="compact-sidebar" checked>
+                                        <label for="compact-sidebar">Compact Sidebar</label>
+                                    </div>
+                                    <div class="form-group checkbox-group">
+                                        <input type="checkbox" id="sticky-header" checked>
+                                        <label for="sticky-header">Sticky Header</label>
+                                    </div>
+                                    <div class="form-group checkbox-group">
+                                        <input type="checkbox" id="show-breadcrumbs">
+                                        <label for="show-breadcrumbs">Show Breadcrumbs</label>
+                                    </div>
+                                    <div class="form-group checkbox-group">
+                                        <input type="checkbox" id="show-animations" checked>
+                                        <label for="show-animations">Show Animations</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="settings-section">
+                                <h3>Custom Branding</h3>
+                                <div class="settings-form">
+                                    <div class="form-group">
+                                        <label for="logo-upload">Upload Logo</label>
+                                        <input type="file" id="logo-upload" accept="image/*">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="favicon-upload">Upload Favicon</label>
+                                        <input type="file" id="favicon-upload" accept="image/*">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button class="cancel-btn">Reset to Default</button>
+                                <button class="save-btn">Save Changes</button>
+                            </div>
+                        </div>
+
+                        <!-- Notifications Settings -->
+                        <div class="settings-tab" id="notifications-tab">
+                            <h2>Notifications Settings</h2>
+                            <div class="settings-section">
+                                <h3>Email Notifications</h3>
+                                <div class="settings-form">
+                                    <div class="form-group checkbox-group">
+                                        <input type="checkbox" id="email-new-animal" checked>
+                                        <label for="email-new-animal">New Animal Added</label>
+                                    </div>
+                                    <div class="form-group checkbox-group">
+                                        <input type="checkbox" id="email-status-change" checked>
+                                        <label for="email-status-change">Conservation Status Change</label>
+                                    </div>
+                                    <div class="form-group checkbox-group">
+                                        <input type="checkbox" id="email-new-user">
+                                        <label for="email-new-user">New User Registration</label>
+                                    </div>
+                                    <div class="form-group checkbox-group">
+                                        <input type="checkbox" id="email-system-updates" checked>
+                                        <label for="email-system-updates">System Updates</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="settings-section">
+                                <h3>In-App Notifications</h3>
+                                <div class="settings-form">
+                                    <div class="form-group checkbox-group">
+                                        <input type="checkbox" id="app-new-animal" checked>
+                                        <label for="app-new-animal">New Animal Added</label>
+                                    </div>
+                                    <div class="form-group checkbox-group">
+                                        <input type="checkbox" id="app-status-change" checked>
+                                        <label for="app-status-change">Conservation Status Change</label>
+                                    </div>
+                                    <div class="form-group checkbox-group">
+                                        <input type="checkbox" id="app-new-user" checked>
+                                        <label for="app-new-user">New User Registration</label>
+                                    </div>
+                                    <div class="form-group checkbox-group">
+                                        <input type="checkbox" id="app-system-updates" checked>
+                                        <label for="app-system-updates">System Updates</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="notification-display-time">Notification Display Time
+                                            (seconds)</label>
+                                        <input type="number" id="notification-display-time" value="5" min="1" max="30">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button class="cancel-btn">Reset to Default</button>
+                                <button class="save-btn">Save Changes</button>
+                            </div>
+                        </div>
+
+                        <!-- Security Settings -->
+                        <div class="settings-tab" id="security-tab">
+                            <h2>Security Settings</h2>
+                            <div class="settings-section">
+                                <h3>Password Policy</h3>
+                                <div class="settings-form">
+                                    <div class="form-group">
+                                        <label for="min-password-length">Minimum Password Length</label>
+                                        <input type="number" id="min-password-length" value="8" min="6" max="20">
+                                    </div>
+                                    <div class="form-group checkbox-group">
+                                        <input type="checkbox" id="require-uppercase" checked>
+                                        <label for="require-uppercase">Require Uppercase Letters</label>
+                                    </div>
+                                    <div class="form-group checkbox-group">
+                                        <input type="checkbox" id="require-numbers" checked>
+                                        <label for="require-numbers">Require Numbers</label>
+                                    </div>
+                                    <div class="form-group checkbox-group">
+                                        <input type="checkbox" id="require-special" checked>
+                                        <label for="require-special">Require Special Characters</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password-expiry">Password Expiry (days)</label>
+                                        <input type="number" id="password-expiry" value="90" min="0" max="365">
+                                        <span class="form-hint">0 = never expire</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="settings-section">
+                                <h3>Login Security</h3>
+                                <div class="settings-form">
+                                    <div class="form-group checkbox-group">
+                                        <input type="checkbox" id="enable-2fa">
+                                        <label for="enable-2fa">Enable Two-Factor Authentication</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="max-login-attempts">Maximum Login Attempts</label>
+                                        <input type="number" id="max-login-attempts" value="5" min="1" max="10">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="lockout-duration">Account Lockout Duration (minutes)</label>
+                                        <input type="number" id="lockout-duration" value="30" min="5" max="1440">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="session-timeout">Session Timeout (minutes)</label>
+                                        <input type="number" id="session-timeout" value="30" min="5" max="1440">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button class="cancel-btn">Reset to Default</button>
+                                <button class="save-btn">Save Changes</button>
+                            </div>
+                        </div>
+
+                        <!-- Backup & Restore Settings -->
+                        <div class="settings-tab" id="backup-tab">
+                            <h2>Backup & Restore</h2>
+                            <div class="settings-section">
+                                <h3>Automated Backups</h3>
+                                <div class="settings-form">
+                                    <div class="form-group checkbox-group">
+                                        <input type="checkbox" id="enable-auto-backup" checked>
+                                        <label for="enable-auto-backup">Enable Automated Backups</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="backup-frequency">Backup Frequency</label>
+                                        <select id="backup-frequency">
+                                            <option value="daily">Daily</option>
+                                            <option value="weekly" selected>Weekly</option>
+                                            <option value="monthly">Monthly</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="backup-time">Backup Time</label>
+                                        <input type="time" id="backup-time" value="02:00">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="backup-retention">Backup Retention (days)</label>
+                                        <input type="number" id="backup-retention" value="30" min="1" max="365">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="settings-section">
+                                <h3>Manual Backup</h3>
+                                <div class="settings-form">
+                                    <div class="form-group">
+                                        <label>Backup Options</label>
+                                        <div class="checkbox-group">
+                                            <input type="checkbox" id="backup-database" checked>
+                                            <label for="backup-database">Database</label>
+                                        </div>
+                                        <div class="checkbox-group">
+                                            <input type="checkbox" id="backup-files" checked>
+                                            <label for="backup-files">Files & Images</label>
+                                        </div>
+                                        <div class="checkbox-group">
+                                            <input type="checkbox" id="backup-settings" checked>
+                                            <label for="backup-settings">System Settings</label>
+                                        </div>
+                                    </div>
+                                    <div class="form-actions inline-actions">
+                                        <button class="action-button primary">
+                                            <i class="ri-download-line"></i> Create Backup
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="settings-section">
+                                <h3>Restore System</h3>
+                                <div class="settings-form">
+                                    <div class="form-group">
+                                        <label for="restore-file">Upload Backup File</label>
+                                        <input type="file" id="restore-file" accept=".zip,.sql,.gz">
+                                    </div>
+                                    <div class="form-actions inline-actions">
+                                        <button class="action-button secondary">
+                                            <i class="ri-upload-line"></i> Restore System
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- API Settings -->
+                        <div class="settings-tab" id="api-tab">
+                            <h2>API Settings</h2>
+                            <div class="settings-section">
+                                <h3>API Configuration</h3>
+                                <div class="settings-form">
+                                    <div class="form-group checkbox-group">
+                                        <input type="checkbox" id="enable-api" checked>
+                                        <label for="enable-api">Enable API Access</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="api-rate-limit">Rate Limit (requests per minute)</label>
+                                        <input type="number" id="api-rate-limit" value="60" min="10" max="1000">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="api-timeout">Request Timeout (seconds)</label>
+                                        <input type="number" id="api-timeout" value="30" min="5" max="120">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="settings-section">
+                                <h3>API Keys</h3>
+                                <div class="settings-form">
+                                    <div class="api-key-list">
+                                        <div class="api-key-item">
+                                            <div class="api-key-info">
+                                                <h4>Mobile App</h4>
+                                                <p class="api-key-value">••••••••••••••••••••••••7f3a</p>
+                                                <p class="api-key-meta">Created: Jan 15, 2023 | Expires: Jan 15, 2024
+                                                </p>
+                                            </div>
+                                            <div class="api-key-actions">
+                                                <button class="action-btn view"><i class="ri-eye-line"></i></button>
+                                                <button class="action-btn edit"><i class="ri-refresh-line"></i></button>
+                                                <button class="action-btn delete"><i
+                                                        class="ri-delete-bin-line"></i></button>
+                                            </div>
+                                        </div>
+                                        <div class="api-key-item">
+                                            <div class="api-key-info">
+                                                <h4>Research Portal</h4>
+                                                <p class="api-key-value">••••••••••••••••••••••••9d2b</p>
+                                                <p class="api-key-meta">Created: Mar 22, 2023 | Expires: Mar 22, 2024
+                                                </p>
+                                            </div>
+                                            <div class="api-key-actions">
+                                                <button class="action-btn view"><i class="ri-eye-line"></i></button>
+                                                <button class="action-btn edit"><i class="ri-refresh-line"></i></button>
+                                                <button class="action-btn delete"><i
+                                                        class="ri-delete-bin-line"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-actions inline-actions">
+                                        <button class="action-button primary">
+                                            <i class="ri-add-line"></i> Generate New API Key
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- System Logs -->
+                        <div class="settings-tab" id="logs-tab">
+                            <h2>System Logs</h2>
+                            <div class="settings-section">
+                                <h3>Log Settings</h3>
+                                <div class="settings-form">
+                                    <div class="form-group">
+                                        <label for="log-level">Log Level</label>
+                                        <select id="log-level">
+                                            <option value="error">Error</option>
+                                            <option value="warning">Warning</option>
+                                            <option value="info" selected>Info</option>
+                                            <option value="debug">Debug</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="log-retention">Log Retention (days)</label>
+                                        <input type="number" id="log-retention" value="30" min="1" max="365">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="settings-section">
+                                <h3>View Logs</h3>
+                                <div class="log-filters">
+                                    <div class="form-group">
+                                        <label for="log-type">Log Type</label>
+                                        <select id="log-type">
+                                            <option value="all" selected>All Logs</option>
+                                            <option value="system">System</option>
+                                            <option value="user">User Activity</option>
+                                            <option value="error">Errors</option>
+                                            <option value="security">Security</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="log-date">Date Range</label>
+                                        <select id="log-date">
+                                            <option value="today">Today</option>
+                                            <option value="yesterday">Yesterday</option>
+                                            <option value="week" selected>Last 7 Days</option>
+                                            <option value="month">Last 30 Days</option>
+                                        </select>
+                                    </div>
+                                    <button class="action-button secondary">
+                                        <i class="ri-filter-line"></i> Filter
+                                    </button>
+                                </div>
+
+                                <div class="log-table">
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th>Timestamp</th>
+                                                <th>Type</th>
+                                                <th>User</th>
+                                                <th>Message</th>
+                                                <th>IP Address</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="log-error">
+                                                <td>2023-06-15 10:45:12</td>
+                                                <td>Error</td>
+                                                <td>admin@example.com</td>
+                                                <td>Database connection failed</td>
+                                                <td>192.168.1.1</td>
+                                            </tr>
+                                            <tr class="log-security">
+                                                <td>2023-06-15 09:32:05</td>
+                                                <td>Security</td>
+                                                <td>sarah.j@example.com</td>
+                                                <td>Failed login attempt</td>
+                                                <td>192.168.1.5</td>
+                                            </tr>
+                                            <tr class="log-user">
+                                                <td>2023-06-14 16:22:47</td>
+                                                <td>User</td>
+                                                <td>michael.c@example.com</td>
+                                                <td>Updated animal record: Bengal Tiger</td>
+                                                <td>192.168.1.10</td>
+                                            </tr>
+                                            <tr class="log-system">
+                                                <td>2023-06-14 02:00:00</td>
+                                                <td>System</td>
+                                                <td>system</td>
+                                                <td>Automated backup completed successfully</td>
+                                                <td>127.0.0.1</td>
+                                            </tr>
+                                            <tr class="log-user">
+                                                <td>2023-06-13 14:15:32</td>
+                                                <td>User</td>
+                                                <td>emily.r@example.com</td>
+                                                <td>Added new conservation program: Coral Reef Restoration</td>
+                                                <td>192.168.1.15</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+
+                                <div class="form-actions inline-actions">
+                                    <button class="action-button secondary">
+                                        <i class="ri-download-line"></i> Export Logs
+                                    </button>
+                                    <button class="action-button danger admin-only">
+                                        <i class="ri-delete-bin-line"></i> Clear Logs
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/Main/in/Main menu/dashboard/dashboard.js"></script>
+    <script src="settings.js"></script>
+</body>
+
+</html>

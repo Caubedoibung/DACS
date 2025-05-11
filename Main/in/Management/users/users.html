@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
+    <link rel="stylesheet" href="/Main/out/style.css">
+    <link rel="stylesheet" href="/Main/in/Main menu/dashboard/dashboard.css">
+    <link rel="stylesheet" href="users.css">
+    <title>Users - Animal Library Management System</title>
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="ri-bard-fill"></i>
+                <h2>Animal Library</h2>
+            </div>
+
+            <div class="menu">
+                <h3>MAIN MENU</h3>
+                <ul>
+                    <li>
+                        <a href="/Main/in/Main menu/dashboard/dashboard.html"><i class="ri-dashboard-line"></i>
+                            Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="/Main/in/Main menu/animal/animals.html"><i class="ri-bear-smile-line"></i> Animals</a>
+                    </li>
+                    <li>
+                        <a href="/Main/in/Main menu/categories/categories.html"><i class="ri-folder-line"></i>
+                            Categories</a>
+                    </li>
+                    <li>
+                        <a href="/Main/in/Main menu/habitats/habitats.html"><i class="ri-earth-line"></i> Habitats</a>
+                    </li>
+                    <li>
+                        <a href="/Main/in/Main menu/conservation/conservation.html"><i class="ri-shield-star-line"></i>
+                            Conservation</a>
+                    </li>
+                </ul>
+
+                <h3>MANAGEMENT</h3>
+                <ul>
+                    <li class="active">
+                        <a href="/Main/in/Management/users/users.html"><i class="ri-user-line"></i> Users</a>
+                    </li>
+                    <li>
+                        <a href="/Main/in/Management/setting/settings.html"><i class="ri-settings-line"></i>
+                            Settings</a>
+                    </li>
+                    <li>
+                        <a href="/Main/in/Management/report/reports.html"><i class="ri-file-chart-line"></i> Reports</a>
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="logout">
+                <a href="/Main/out/login.html"><i class="ri-logout-box-line"></i> Logout</a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Navigation Bar -->
+            <nav class="top-nav">
+                <div class="search-bar">
+                    <i class="ri-search-line"></i>
+                    <input type="text" placeholder="Search for users...">
+                </div>
+
+                <div class="user-area">
+                    <div class="notifications">
+                        <i class="ri-notification-3-line"></i>
+                        <span class="badge">3</span>
+                    </div>
+                    <div class="user-profile">
+                        <img src="../img/imgLogin.jpg" alt="User Profile" id="user-avatar">
+                        <div class="user-info">
+                            <h4 id="user-name">User</h4>
+                            <p id="user-role">Viewer</p>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Users Content -->
+            <div class="dashboard-content">
+                <div class="page-header">
+                    <h1>Users Management</h1>
+                    <p>Manage system users and their permissions</p>
+                </div>
+
+                <!-- Users Overview -->
+                <div class="users-overview">
+                    <div class="overview-card">
+                        <div class="overview-icon">
+                            <i class="ri-user-line"></i>
+                        </div>
+                        <div class="overview-details">
+                            <h3>Total Users</h3>
+                            <p class="overview-value">24</p>
+                        </div>
+                    </div>
+                    <div class="overview-card">
+                        <div class="overview-icon admin-icon">
+                            <i class="ri-admin-line"></i>
+                        </div>
+                        <div class="overview-details">
+                            <h3>Administrators</h3>
+                            <p class="overview-value">5</p>
+                        </div>
+                    </div>
+                    <div class="overview-card">
+                        <div class="overview-icon editor-icon">
+                            <i class="ri-edit-line"></i>
+                        </div>
+                        <div class="overview-details">
+                            <h3>Editors</h3>
+                            <p class="overview-value">8</p>
+                        </div>
+                    </div>
+                    <div class="overview-card">
+                        <div class="overview-icon viewer-icon">
+                            <i class="ri-eye-line"></i>
+                        </div>
+                        <div class="overview-details">
+                            <h3>Viewers</h3>
+                            <p class="overview-value">11</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Bar -->
+                <div class="action-bar">
+                    <div class="filters">
+                        <select id="role-filter">
+                            <option value="">All Roles</option>
+                            <option value="admin">Administrator</option>
+                            <option value="editor">Editor</option>
+                            <option value="viewer">Viewer</option>
+                        </select>
+                        <select id="status-filter">
+                            <option value="">All Statuses</option>
+                            <option value="active">Active</option>
+                            <option value="inactive">Inactive</option>
+                        </select>
+                    </div>
+
+                    <div class="actions">
+                        <button id="export-btn" class="action-button secondary admin-only">
+                            <i class="ri-download-line"></i> Export
+                        </button>
+                        <button id="add-user-btn" class="action-button primary admin-only">
+                            <i class="ri-user-add-line"></i> Add User
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Users Table -->
+                <div class="users-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>User</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Status</th>
+                                <th>Last Login</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="user-info-cell">
+                                        <img src="../img/imgLogin.jpg" alt="Admin User" class="user-avatar">
+                                        <div>
+                                            <p class="user-name">Admin User</p>
+                                            <p class="user-id">ID: #001</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>admin@example.com</td>
+                                <td><span class="role admin">Administrator</span></td>
+                                <td><span class="status active">Active</span></td>
+                                <td>Today, 10:45 AM</td>
+                                <td>
+                                    <div class="table-actions">
+                                        <button class="action-btn view" onclick="viewUser('admin-user')"><i
+                                                class="ri-eye-line"></i></button>
+                                        <button class="action-btn edit admin-only" onclick="editUser('admin-user')"><i
+                                                class="ri-edit-line"></i></button>
+                                        <button class="action-btn delete admin-only"
+                                            onclick="deleteUser('admin-user')"><i
+                                                class="ri-delete-bin-line"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="user-info-cell">
+                                        <img src="../img/imgLogin.jpg" alt="Sarah Johnson" class="user-avatar">
+                                        <div>
+                                            <p class="user-name">Sarah Johnson</p>
+                                            <p class="user-id">ID: #002</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>sarah.j@example.com</td>
+                                <td><span class="role admin">Administrator</span></td>
+                                <td><span class="status active">Active</span></td>
+                                <td>Today, 09:12 AM</td>
+                                <td>
+                                    <div class="table-actions">
+                                        <button class="action-btn view" onclick="viewUser('sarah-johnson')"><i
+                                                class="ri-eye-line"></i></button>
+                                        <button class="action-btn edit admin-only"
+                                            onclick="editUser('sarah-johnson')"><i class="ri-edit-line"></i></button>
+                                        <button class="action-btn delete admin-only"
+                                            onclick="deleteUser('sarah-johnson')"><i
+                                                class="ri-delete-bin-line"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="user-info-cell">
+                                        <img src="../img/imgLogin.jpg" alt="Michael Chen" class="user-avatar">
+                                        <div>
+                                            <p class="user-name">Michael Chen</p>
+                                            <p class="user-id">ID: #003</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>michael.c@example.com</td>
+                                <td><span class="role editor">Editor</span></td>
+                                <td><span class="status active">Active</span></td>
+                                <td>Yesterday, 15:30 PM</td>
+                                <td>
+                                    <div class="table-actions">
+                                        <button class="action-btn view" onclick="viewUser('michael-chen')"><i
+                                                class="ri-eye-line"></i></button>
+                                        <button class="action-btn edit admin-only" onclick="editUser('michael-chen')"><i
+                                                class="ri-edit-line"></i></button>
+                                        <button class="action-btn delete admin-only"
+                                            onclick="deleteUser('michael-chen')"><i
+                                                class="ri-delete-bin-line"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="user-info-cell">
+                                        <img src="../img/imgLogin.jpg" alt="Emily Rodriguez" class="user-avatar">
+                                        <div>
+                                            <p class="user-name">Emily Rodriguez</p>
+                                            <p class="user-id">ID: #004</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>emily.r@example.com</td>
+                                <td><span class="role editor">Editor</span></td>
+                                <td><span class="status active">Active</span></td>
+                                <td>Yesterday, 11:20 AM</td>
+                                <td>
+                                    <div class="table-actions">
+                                        <button class="action-btn view" onclick="viewUser('emily-rodriguez')"><i
+                                                class="ri-eye-line"></i></button>
+                                        <button class="action-btn edit admin-only"
+                                            onclick="editUser('emily-rodriguez')"><i class="ri-edit-line"></i></button>
+                                        <button class="action-btn delete admin-only"
+                                            onclick="deleteUser('emily-rodriguez')"><i
+                                                class="ri-delete-bin-line"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="user-info-cell">
+                                        <img src="../img/imgLogin.jpg" alt="David Wilson" class="user-avatar">
+                                        <div>
+                                            <p class="user-name">David Wilson</p>
+                                            <p class="user-id">ID: #005</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>david.w@example.com</td>
+                                <td><span class="role viewer">Viewer</span></td>
+                                <td><span class="status inactive">Inactive</span></td>
+                                <td>3 days ago</td>
+                                <td>
+                                    <div class="table-actions">
+                                        <button class="action-btn view" onclick="viewUser('david-wilson')"><i
+                                                class="ri-eye-line"></i></button>
+                                        <button class="action-btn edit admin-only" onclick="editUser('david-wilson')"><i
+                                                class="ri-edit-line"></i></button>
+                                        <button class="action-btn delete admin-only"
+                                            onclick="deleteUser('david-wilson')"><i
+                                                class="ri-delete-bin-line"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="user-info-cell">
+                                        <img src="../img/imgLogin.jpg" alt="Jessica Kim" class="user-avatar">
+                                        <div>
+                                            <p class="user-name">Jessica Kim</p>
+                                            <p class="user-id">ID: #006</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>jessica.k@example.com</td>
+                                <td><span class="role viewer">Viewer</span></td>
+                                <td><span class="status active">Active</span></td>
+                                <td>Today, 08:45 AM</td>
+                                <td>
+                                    <div class="table-actions">
+                                        <button class="action-btn view" onclick="viewUser('jessica-kim')"><i
+                                                class="ri-eye-line"></i></button>
+                                        <button class="action-btn edit admin-only" onclick="editUser('jessica-kim')"><i
+                                                class="ri-edit-line"></i></button>
+                                        <button class="action-btn delete admin-only"
+                                            onclick="deleteUser('jessica-kim')"><i
+                                                class="ri-delete-bin-line"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <button class="page-btn prev"><i class="ri-arrow-left-s-line"></i></button>
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn next"><i class="ri-arrow-right-s-line"></i></button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Add User Modal -->
+    <div class="modal" id="add-user-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add New User</h2>
+                <button class="close-modal" onclick="closeModal()"><i class="ri-close-line"></i></button>
+            </div>
+            <div class="modal-body">
+                <form id="add-user-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="first-name">First Name</label>
+                            <input type="text" id="first-name" placeholder="Enter first name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="last-name">Last Name</label>
+                            <input type="text" id="last-name" placeholder="Enter last name" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Enter email address" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="user-role">Role</label>
+                            <select id="user-role" required>
+                                <option value="">Select Role</option>
+                                <option value="admin">Administrator</option>
+                                <option value="editor">Editor</option>
+                                <option value="viewer">Viewer</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="user-status">Status</label>
+                            <select id="user-status" required>
+                                <option value="active">Active</option>
+                                <option value="inactive">Inactive</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" placeholder="Enter password" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirm-password">Confirm Password</label>
+                            <input type="password" id="confirm-password" placeholder="Confirm password" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="user-notes">Notes</label>
+                        <textarea id="user-notes" rows="3" placeholder="Enter additional notes"></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="cancel-btn" onclick="closeModal()">Cancel</button>
+                        <button type="submit" class="submit-btn">Add User</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- User Details Modal -->
+    <div class="modal" id="user-details-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-user-name">User Details</h2>
+                <button class="close-modal" onclick="closeDetailsModal()"><i class="ri-close-line"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="user-detail-content">
+                    <div class="user-detail-header">
+                        <div class="user-detail-avatar">
+                            <img id="modal-user-avatar" src="../img/imgLogin.jpg" alt="User Avatar">
+                        </div>
+                        <div class="user-detail-info">
+                            <div class="user-detail-meta">
+                                <span id="modal-user-id" class="user-id">ID: #001</span>
+                                <span id="modal-user-role" class="role admin">Administrator</span>
+                                <span id="modal-user-status" class="status active">Active</span>
+                            </div>
+                            <p id="modal-user-email" class="user-email">admin@example.com</p>
+                        </div>
+                    </div>
+
+                    <div class="user-detail-sections">
+                        <div class="detail-section">
+                            <h3>Account Information</h3>
+                            <div class="detail-grid">
+                                <div class="detail-item">
+                                    <span class="detail-label">Created</span>
+                                    <span id="modal-created-date" class="detail-value">Jan 15, 2023</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Last Login</span>
+                                    <span id="modal-last-login" class="detail-value">Today, 10:45 AM</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Last Updated</span>
+                                    <span id="modal-last-updated" class="detail-value">Mar 22, 2023</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label">Login Count</span>
+                                    <span id="modal-login-count" class="detail-value">42</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="detail-section">
+                            <h3>Permissions</h3>
+                            <div class="permissions-list" id="modal-permissions">
+                                <!-- Will be populated by JavaScript -->
+                            </div>
+                        </div>
+
+                        <div class="detail-section">
+                            <h3>Recent Activity</h3>
+                            <div class="activity-list" id="modal-activity">
+                                <!-- Will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer admin-only">
+                <button class="reset-btn" onclick="resetPassword()">Reset Password</button>
+                <button class="edit-btn" onclick="editUserFromModal()">Edit User</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/Main/in/Main menu/dashboard/dashboard.js"></script>
+    <script src="users.js"></script>
+</body>
+
+</html>

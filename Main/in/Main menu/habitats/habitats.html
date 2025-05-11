@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
+    <link rel="stylesheet" href="/Main/out/style.css">
+    <link rel="stylesheet" href="/Main/in/Main menu/dashboard/dashboard.css">
+    <link rel="stylesheet" href="habitats.css">
+    <title>Habitats - Animal Library Management System</title>
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="ri-bard-fill"></i>
+                <h2>Animal Library</h2>
+            </div>
+
+            <div class="menu">
+                <h3>MAIN MENU</h3>
+                <ul>
+                    <li>
+                        <a href="/Main/in/Main menu/dashboard/dashboard.html"><i class="ri-dashboard-line"></i>
+                            Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="/Main/in/Main menu/animal/animals.html"><i class="ri-bear-smile-line"></i> Animals</a>
+                    </li>
+                    <li>
+                        <a href="/Main/in/Main menu/categories/categories.html"><i class="ri-folder-line"></i>
+                            Categories</a>
+                    </li>
+                    <li class="active">
+                        <a href="/Main/in/Main menu/habitats/habitats.html"><i class="ri-earth-line"></i> Habitats</a>
+                    </li>
+                    <li>
+                        <a href="/Main/in/Main menu/conservation/conservation.html"><i class="ri-shield-star-line"></i>
+                            Conservation</a>
+                    </li>
+                </ul>
+
+
+                <h3>MANAGEMENT</h3>
+                <ul>
+                    <li>
+                        <a href="/Main/in/Management/users/users.html"><i class="ri-user-line"></i> Users</a>
+                    </li>
+                    <li>
+                        <a href="/Main/in/Management/setting/settings.html"><i class="ri-settings-line"></i>
+                            Settings</a>
+                    </li>
+                    <li>
+                        <a href="/Main/in/Management/report/reports.html"><i class="ri-file-chart-line"></i> Reports</a>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="logout">
+                <a href="/Main/out/login.html"><i class="ri-logout-box-line"></i> Logout</a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Navigation Bar -->
+            <nav class="top-nav">
+                <div class="search-bar">
+                    <i class="ri-search-line"></i>
+                    <input type="text" placeholder="Search for habitats...">
+                </div>
+
+                <div class="user-area">
+                    <div class="notifications">
+                        <i class="ri-notification-3-line"></i>
+                        <span class="badge">3</span>
+                    </div>
+                    <div class="user-profile">
+                        <img src="../img/imgLogin.jpg" alt="User Profile" id="user-avatar">
+                        <div class="user-info">
+                            <h4 id="user-name">User</h4>
+                            <p id="user-role">Viewer</p>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Habitats Content -->
+            <div class="dashboard-content">
+                <div class="page-header">
+                    <h1>Habitats</h1>
+                    <p>Explore and manage animal habitats around the world</p>
+                </div>
+
+                <!-- Action Bar -->
+                <div class="action-bar">
+                    <div class="filters">
+                        <select id="region-filter">
+                            <option value="">All Regions</option>
+                            <option value="africa">Africa</option>
+                            <option value="asia">Asia</option>
+                            <option value="europe">Europe</option>
+                            <option value="north-america">North America</option>
+                            <option value="south-america">South America</option>
+                            <option value="australia">Australia</option>
+                            <option value="antarctica">Antarctica</option>
+                            <option value="oceans">Oceans</option>
+                        </select>
+                        <select id="type-filter">
+                            <option value="">All Types</option>
+                            <option value="terrestrial">Terrestrial</option>
+                            <option value="aquatic">Aquatic</option>
+                            <option value="aerial">Aerial</option>
+                        </select>
+                    </div>
+
+                    <div class="actions">
+                        <button id="export-btn" class="action-button secondary admin-only">
+                            <i class="ri-download-line"></i> Export
+                        </button>
+                        <button id="add-habitat-btn" class="action-button primary admin-only">
+                            <i class="ri-add-line"></i> Add Habitat
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Habitats Grid -->
+                <div class="habitats-grid">
+                    <div class="habitat-card">
+                        <div class="habitat-image">
+                            <img src="../img/imglion.jpg" alt="Savanna">
+                            <div class="habitat-overlay">
+                                <span class="habitat-type terrestrial">Terrestrial</span>
+                                <span class="habitat-region">Africa</span>
+                            </div>
+                        </div>
+                        <div class="habitat-details">
+                            <h3>Savanna</h3>
+                            <p>Grassland ecosystem with scattered trees, characterized by warm temperatures year-round
+                                and seasonal rainfall</p>
+                            <div class="habitat-meta">
+                                <span><i class="ri-bear-smile-line"></i> 124 Animals</span>
+                                <span><i class="ri-shield-star-line"></i> 36 Endangered</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="card-btn view" onclick="viewHabitat('savanna')"><i
+                                        class="ri-eye-line"></i></button>
+                                <button class="card-btn edit admin-only" onclick="editHabitat('savanna')"><i
+                                        class="ri-edit-line"></i></button>
+                                <button class="card-btn delete admin-only" onclick="deleteHabitat('savanna')"><i
+                                        class="ri-delete-bin-line"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="habitat-card">
+                        <div class="habitat-image">
+                            <img src="../img/imgshark.jpg" alt="Coral Reef">
+                            <div class="habitat-overlay">
+                                <span class="habitat-type aquatic">Aquatic</span>
+                                <span class="habitat-region">Oceans</span>
+                            </div>
+                        </div>
+                        <div class="habitat-details">
+                            <h3>Coral Reef</h3>
+                            <p>Diverse underwater ecosystems held together by calcium carbonate structures secreted by
+                                corals</p>
+                            <div class="habitat-meta">
+                                <span><i class="ri-bear-smile-line"></i> 186 Animals</span>
+                                <span><i class="ri-shield-star-line"></i> 42 Endangered</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="card-btn view" onclick="viewHabitat('coral-reef')"><i
+                                        class="ri-eye-line"></i></button>
+                                <button class="card-btn edit admin-only" onclick="editHabitat('coral-reef')"><i
+                                        class="ri-edit-line"></i></button>
+                                <button class="card-btn delete admin-only" onclick="deleteHabitat('coral-reef')"><i
+                                        class="ri-delete-bin-line"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="habitat-card">
+                        <div class="habitat-image">
+                            <img src="../img/imgsnake.jpg" alt="Rainforest">
+                            <div class="habitat-overlay">
+                                <span class="habitat-type terrestrial">Terrestrial</span>
+                                <span class="habitat-region">South America</span>
+                            </div>
+                        </div>
+                        <div class="habitat-details">
+                            <h3>Rainforest</h3>
+                            <p>Forest characterized by high rainfall, with annual rainfall in the case of tropical
+                                rainforests between 250-450 cm</p>
+                            <div class="habitat-meta">
+                                <span><i class="ri-bear-smile-line"></i> 214 Animals</span>
+                                <span><i class="ri-shield-star-line"></i> 68 Endangered</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="card-btn view" onclick="viewHabitat('rainforest')"><i
+                                        class="ri-eye-line"></i></button>
+                                <button class="card-btn edit admin-only" onclick="editHabitat('rainforest')"><i
+                                        class="ri-edit-line"></i></button>
+                                <button class="card-btn delete admin-only" onclick="deleteHabitat('rainforest')"><i
+                                        class="ri-delete-bin-line"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="habitat-card">
+                        <div class="habitat-image">
+                            <img src="../img/imgfrog.jpg" alt="Wetlands">
+                            <div class="habitat-overlay">
+                                <span class="habitat-type aquatic">Aquatic</span>
+                                <span class="habitat-region">Global</span>
+                            </div>
+                        </div>
+                        <div class="habitat-details">
+                            <h3>Wetlands</h3>
+                            <p>Land areas that are saturated or flooded with water either permanently or seasonally</p>
+                            <div class="habitat-meta">
+                                <span><i class="ri-bear-smile-line"></i> 156 Animals</span>
+                                <span><i class="ri-shield-star-line"></i> 48 Endangered</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="card-btn view" onclick="viewHabitat('wetlands')"><i
+                                        class="ri-eye-line"></i></button>
+                                <button class="card-btn edit admin-only" onclick="editHabitat('wetlands')"><i
+                                        class="ri-edit-line"></i></button>
+                                <button class="card-btn delete admin-only" onclick="deleteHabitat('wetlands')"><i
+                                        class="ri-delete-bin-line"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="habitat-card">
+                        <div class="habitat-image">
+                            <img src="../img/imgeagle.jpg" alt="Mountains">
+                            <div class="habitat-overlay">
+                                <span class="habitat-type terrestrial">Terrestrial</span>
+                                <span class="habitat-region">Global</span>
+                            </div>
+                        </div>
+                        <div class="habitat-details">
+                            <h3>Mountains</h3>
+                            <p>Large landform that rises prominently above its surroundings, characterized by steep
+                                slopes</p>
+                            <div class="habitat-meta">
+                                <span><i class="ri-bear-smile-line"></i> 98 Animals</span>
+                                <span><i class="ri-shield-star-line"></i> 32 Endangered</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="card-btn view" onclick="viewHabitat('mountains')"><i
+                                        class="ri-eye-line"></i></button>
+                                <button class="card-btn edit admin-only" onclick="editHabitat('mountains')"><i
+                                        class="ri-edit-line"></i></button>
+                                <button class="card-btn delete admin-only" onclick="deleteHabitat('mountains')"><i
+                                        class="ri-delete-bin-line"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="habitat-card">
+                        <div class="habitat-image">
+                            <img src="../img/imgjellyfish.jpg" alt="Deep Ocean">
+                            <div class="habitat-overlay">
+                                <span class="habitat-type aquatic">Aquatic</span>
+                                <span class="habitat-region">Oceans</span>
+                            </div>
+                        </div>
+                        <div class="habitat-details">
+                            <h3>Deep Ocean</h3>
+                            <p>The deepest parts of the ocean, characterized by high pressure, cold temperatures, and
+                                absence of light</p>
+                            <div class="habitat-meta">
+                                <span><i class="ri-bear-smile-line"></i> 112 Animals</span>
+                                <span><i class="ri-shield-star-line"></i> 28 Endangered</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="card-btn view" onclick="viewHabitat('deep-ocean')"><i
+                                        class="ri-eye-line"></i></button>
+                                <button class="card-btn edit admin-only" onclick="editHabitat('deep-ocean')"><i
+                                        class="ri-edit-line"></i></button>
+                                <button class="card-btn delete admin-only" onclick="deleteHabitat('deep-ocean')"><i
+                                        class="ri-delete-bin-line"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <button class="page-btn prev"><i class="ri-arrow-left-s-line"></i></button>
+                    <button class="page-btn active">1</button>
+                    <button class="page-btn">2</button>
+                    <button class="page-btn next"><i class="ri-arrow-right-s-line"></i></button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Add Habitat Modal -->
+    <div class="modal" id="add-habitat-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add New Habitat</h2>
+                <button class="close-modal" onclick="closeModal()"><i class="ri-close-line"></i></button>
+            </div>
+            <div class="modal-body">
+                <form id="add-habitat-form">
+                    <div class="form-group">
+                        <label for="habitat-name">Habitat Name</label>
+                        <input type="text" id="habitat-name" placeholder="Enter habitat name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="habitat-description">Description</label>
+                        <textarea id="habitat-description" rows="4" placeholder="Enter habitat description"></textarea>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="habitat-type">Type</label>
+                            <select id="habitat-type" required>
+                                <option value="">Select Type</option>
+                                <option value="terrestrial">Terrestrial</option>
+                                <option value="aquatic">Aquatic</option>
+                                <option value="aerial">Aerial</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="habitat-region">Region</label>
+                            <select id="habitat-region" required>
+                                <option value="">Select Region</option>
+                                <option value="africa">Africa</option>
+                                <option value="asia">Asia</option>
+                                <option value="europe">Europe</option>
+                                <option value="north-america">North America</option>
+                                <option value="south-america">South America</option>
+                                <option value="australia">Australia</option>
+                                <option value="antarctica">Antarctica</option>
+                                <option value="oceans">Oceans</option>
+                                <option value="global">Global</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="habitat-image">Upload Image</label>
+                        <input type="file" id="habitat-image" accept="image/*">
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="cancel-btn" onclick="closeModal()">Cancel</button>
+                        <button type="submit" class="submit-btn">Add Habitat</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Habitat Details Modal -->
+    <div class="modal" id="habitat-details-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-habitat-name">Habitat Details</h2>
+                <button class="close-modal" onclick="closeDetailsModal()"><i class="ri-close-line"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="habitat-detail-content">
+                    <div class="habitat-detail-image">
+                        <img id="modal-habitat-image" src="/placeholder.svg" alt="Habitat Image">
+                        <div class="habitat-detail-overlay">
+                            <span id="modal-habitat-type" class="habitat-type"></span>
+                            <span id="modal-habitat-region" class="habitat-region"></span>
+                        </div>
+                    </div>
+                    <div class="habitat-detail-info">
+                        <p id="modal-habitat-description" class="habitat-description"></p>
+
+                        <div class="habitat-stats">
+                            <div class="stat-item">
+                                <span class="stat-value" id="modal-animal-count">0</span>
+                                <span class="stat-label">Animals</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value" id="modal-endangered-count">0</span>
+                                <span class="stat-label">Endangered</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-value" id="modal-category-count">0</span>
+                                <span class="stat-label">Categories</span>
+                            </div>
+                        </div>
+
+                        <div class="habitat-animals">
+                            <h3>Animals in this Habitat</h3>
+                            <div class="animal-list">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Animal</th>
+                                            <th>Scientific Name</th>
+                                            <th>Category</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="habitat-animals-list">
+                                        <!-- Animal list will be populated by JavaScript -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer admin-only">
+                <button class="edit-btn" onclick="editHabitatFromModal()">Edit Habitat</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/Main/in/Main menu/dashboard/dashboard.js"></script>
+    <script src="habitats.js"></script>
+</body>
+
+</html>

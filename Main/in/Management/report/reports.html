@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
+    <link rel="stylesheet" href="/Main/out/style.css">
+    <link rel="stylesheet" href="/Main/in/Main menu/dashboard/dashboard.css">
+    <link rel="stylesheet" href="reports.css">
+    <title>Reports - Animal Library Management System</title>
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="ri-bard-fill"></i>
+                <h2>Animal Library</h2>
+            </div>
+
+            <div class="menu">
+                <h3>MAIN MENU</h3>
+                <ul>
+                    <li>
+                        <a href="/Main/in/Main menu/dashboard/dashboard.html"><i class="ri-dashboard-line"></i>
+                            Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="/Main/in/Main menu/animal/animals.html"><i class="ri-bear-smile-line"></i> Animals</a>
+                    </li>
+                    <li>
+                        <a href="/Main/in/Main menu/categories/categories.html"><i class="ri-folder-line"></i>
+                            Categories</a>
+                    </li>
+                    <li>
+                        <a href="/Main/in/Main menu/habitats/habitats.html"><i class="ri-earth-line"></i> Habitats</a>
+                    </li>
+                    <li>
+                        <a href="/Main/in/Main menu/conservation/conservation.html"><i class="ri-shield-star-line"></i>
+                            Conservation</a>
+                    </li>
+                </ul>
+
+                <h3>MANAGEMENT</h3>
+                <ul>
+                    <li>
+                        <a href="/Main/in/Management/users/users.html"><i class="ri-user-line"></i> Users</a>
+                    </li>
+                    <li>
+                        <a href="/Main/in/Management/setting/settings.html"><i class="ri-settings-line"></i>
+                            Settings</a>
+                    </li>
+                    <li class="active">
+                        <a href="/Main/in/Management/report/reports.html"><i class="ri-file-chart-line"></i> Reports</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="logout">
+                <a href="../login.html"><i class="ri-logout-box-line"></i> Logout</a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Navigation Bar -->
+            <nav class="top-nav">
+                <div class="search-bar">
+                    <i class="ri-search-line"></i>
+                    <input type="text" placeholder="Search reports...">
+                </div>
+
+                <div class="user-area">
+                    <div class="notifications">
+                        <i class="ri-notification-3-line"></i>
+                        <span class="badge">3</span>
+                    </div>
+                    <div class="user-profile">
+                        <img src="../img/imgLogin.jpg" alt="User Profile" id="user-avatar">
+                        <div class="user-info">
+                            <h4 id="user-name">User</h4>
+                            <p id="user-role">Viewer</p>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Reports Content -->
+            <div class="dashboard-content">
+                <div class="page-header">
+                    <h1>Reports</h1>
+                    <p>Generate and view system reports</p>
+                </div>
+
+                <!-- Reports Layout -->
+                <div class="reports-layout">
+                    <!-- Reports Navigation -->
+                    <div class="reports-nav">
+                        <ul>
+                            <li class="active" data-report="overview">
+                                <i class="ri-dashboard-line"></i> Overview
+                            </li>
+                            <li data-report="animals">
+                                <i class="ri-bear-smile-line"></i> Animals
+                            </li>
+                            <li data-report="conservation">
+                                <i class="ri-shield-star-line"></i> Conservation
+                            </li>
+                            <li data-report="users">
+                                <i class="ri-user-line"></i> Users
+                            </li>
+                            <li data-report="activity">
+                                <i class="ri-history-line"></i> Activity
+                            </li>
+                            <li data-report="custom">
+                                <i class="ri-file-chart-line"></i> Custom Reports
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Reports Content -->
+                    <div class="reports-content">
+                        <!-- Overview Report -->
+                        <div class="report-tab active" id="overview-report">
+                            <div class="report-header">
+                                <h2>System Overview</h2>
+                                <div class="report-actions">
+                                    <button class="action-button secondary">
+                                        <i class="ri-calendar-line"></i> Last 30 Days
+                                    </button>
+                                    <button class="action-button secondary">
+                                        <i class="ri-download-line"></i> Export
+                                    </button>
+                                    <button class="action-button primary">
+                                        <i class="ri-refresh-line"></i> Refresh
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Stats Cards -->
+                            <div class="stats-cards">
+                                <div class="stat-card">
+                                    <div class="stat-icon">
+                                        <i class="ri-bear-smile-line"></i>
+                                    </div>
+                                    <div class="stat-info">
+                                        <h3>Total Animals</h3>
+                                        <p class="stat-value">1,248</p>
+                                        <p class="stat-change positive">+24 this month</p>
+                                    </div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-icon">
+                                        <i class="ri-earth-line"></i>
+                                    </div>
+                                    <div class="stat-info">
+                                        <h3>Habitats</h3>
+                                        <p class="stat-value">42</p>
+                                        <p class="stat-change positive">+3 this month</p>
+                                    </div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-icon">
+                                        <i class="ri-shield-star-line"></i>
+                                    </div>
+                                    <div class="stat-info">
+                                        <h3>Conservation Programs</h3>
+                                        <p class="stat-value">36</p>
+                                        <p class="stat-change positive">+2 this month</p>
+                                    </div>
+                                </div>
+                                <div class="stat-card">
+                                    <div class="stat-icon">
+                                        <i class="ri-user-line"></i>
+                                    </div>
+                                    <div class="stat-info">
+                                        <h3>Active Users</h3>
+                                        <p class="stat-value">128</p>
+                                        <p class="stat-change positive">+15 this month</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Charts -->
+                            <div class="charts-container">
+                                <div class="chart-card">
+                                    <h3>Animals by Conservation Status</h3>
+                                    <div class="chart-placeholder">
+                                        <div class="pie-chart">
+                                            <div class="pie-segment" style="--percentage: 45; --color: #f83600;">
+                                                <span class="pie-label">Endangered</span>
+                                            </div>
+                                            <div class="pie-segment" style="--percentage: 30; --color: #f9d423;">
+                                                <span class="pie-label">Vulnerable</span>
+                                            </div>
+                                            <div class="pie-segment" style="--percentage: 15; --color: #2d89a8;">
+                                                <span class="pie-label">Near Threatened</span>
+                                            </div>
+                                            <div class="pie-segment" style="--percentage: 10; --color: #a3e635;">
+                                                <span class="pie-label">Least Concern</span>
+                                            </div>
+                                        </div>
+                                        <div class="chart-legend">
+                                            <div class="legend-item">
+                                                <span class="legend-color" style="background-color: #f83600;"></span>
+                                                <span>Endangered (45%)</span>
+                                            </div>
+                                            <div class="legend-item">
+                                                <span class="legend-color" style="background-color: #f9d423;"></span>
+                                                <span>Vulnerable (30%)</span>
+                                            </div>
+                                            <div class="legend-item">
+                                                <span class="legend-color" style="background-color: #2d89a8;"></span>
+                                                <span>Near Threatened (15%)</span>
+                                            </div>
+                                            <div class="legend-item">
+                                                <span class="legend-color" style="background-color: #a3e635;"></span>
+                                                <span>Least Concern (10%)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="chart-card">
+                                    <h3>Animals by Category</h3>
+                                    <div class="chart-placeholder">
+                                        <div class="bar-chart">
+                                            <div class="bar-container">
+                                                <div class="bar-label">Mammals</div>
+                                                <div class="bar" style="--percentage: 75; --color: #a3e635;">
+                                                    <span class="bar-value">450</span>
+                                                </div>
+                                            </div>
+                                            <div class="bar-container">
+                                                <div class="bar-label">Birds</div>
+                                                <div class="bar" style="--percentage: 60; --color: #a3e635;">
+                                                    <span class="bar-value">360</span>
+                                                </div>
+                                            </div>
+                                            <div class="bar-container">
+                                                <div class="bar-label">Reptiles</div>
+                                                <div class="bar" style="--percentage: 45; --color: #a3e635;">
+                                                    <span class="bar-value">270</span>
+                                                </div>
+                                            </div>
+                                            <div class="bar-container">
+                                                <div class="bar-label">Amphibians</div>
+                                                <div class="bar" style="--percentage: 25; --color: #a3e635;">
+                                                    <span class="bar-value">150</span>
+                                                </div>
+                                            </div>
+                                            <div class="bar-container">
+                                                <div class="bar-label">Fish</div>
+                                                <div class="bar" style="--percentage: 35; --color: #a3e635;">
+                                                    <span class="bar-value">210</span>
+                                                </div>
+                                            </div>
+                                            <div class="bar-container">
+                                                <div class="bar-label">Invertebrates</div>
+                                                <div class="bar" style="--percentage: 15; --color: #a3e635;">
+                                                    <span class="bar-value">90</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Recent Activity -->
+                            <div class="recent-activity">
+                                <h3>Recent Activity</h3>
+                                <div class="activity-list">
+                                    <div class="activity-item">
+                                        <div class="activity-icon">
+                                            <i class="ri-bear-smile-line"></i>
+                                        </div>
+                                        <div class="activity-details">
+                                            <h4>New Animal Added</h4>
+                                            <p>Sumatran Tiger added to the database</p>
+                                            <span class="activity-time">2 hours ago</span>
+                                        </div>
+                                    </div>
+                                    <div class="activity-item">
+                                        <div class="activity-icon">
+                                            <i class="ri-shield-star-line"></i>
+                                        </div>
+                                        <div class="activity-details">
+                                            <h4>Conservation Status Updated</h4>
+                                            <p>Mountain Gorilla status changed from "Critically Endangered" to
+                                                "Endangered"</p>
+                                            <span class="activity-time">1 day ago</span>
+                                        </div>
+                                    </div>
+                                    <div class="activity-item">
+                                        <div class="activity-icon">
+                                            <i class="ri-user-line"></i>
+                                        </div>
+                                        <div class="activity-details">
+                                            <h4>New User Registered</h4>
+                                            <p>Sarah Johnson joined as a Researcher</p>
+                                            <span class="activity-time">2 days ago</span>
+                                        </div>
+                                    </div>
+                                    <div class="activity-item">
+                                        <div class="activity-icon">
+                                            <i class="ri-earth-line"></i>
+                                        </div>
+                                        <div class="activity-details">
+                                            <h4>Habitat Updated</h4>
+                                            <p>Coral Reef habitat information updated</p>
+                                            <span class="activity-time">3 days ago</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Animals Report -->
+                        <div class="report-tab" id="animals-report">
+                            <div class="report-header">
+                                <h2>Animals Report</h2>
+                                <div class="report-actions">
+                                    <button class="action-button secondary">
+                                        <i class="ri-filter-line"></i> Filter
+                                    </button>
+                                    <button class="action-button secondary">
+                                        <i class="ri-download-line"></i> Export
+                                    </button>
+                                    <button class="action-button primary">
+                                        <i class="ri-refresh-line"></i> Refresh
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Report Filters -->
+                            <div class="report-filters">
+                                <div class="filter-group">
+                                    <label for="category-filter">Category</label>
+                                    <select id="category-filter">
+                                        <option value="all">All Categories</option>
+                                        <option value="mammals">Mammals</option>
+                                        <option value="birds">Birds</option>
+                                        <option value="reptiles">Reptiles</option>
+                                        <option value="amphibians">Amphibians</option>
+                                        <option value="fish">Fish</option>
+                                        <option value="invertebrates">Invertebrates</option>
+                                    </select>
+                                </div>
+                                <div class="filter-group">
+                                    <label for="status-filter">Conservation Status</label>
+                                    <select id="status-filter">
+                                        <option value="all">All Statuses</option>
+                                        <option value="critical">Critically Endangered</option>
+                                        <option value="endangered">Endangered</option>
+                                        <option value="vulnerable">Vulnerable</option>
+                                        <option value="near-threatened">Near Threatened</option>
+                                        <option value="least-concern">Least Concern</option>
+                                    </select>
+                                </div>
+                                <div class="filter-group">
+                                    <label for="habitat-filter">Habitat</label>
+                                    <select id="habitat-filter">
+                                        <option value="all">All Habitats</option>
+                                        <option value="savanna">Savanna</option>
+                                        <option value="rainforest">Rainforest</option>
+                                        <option value="coral-reef">Coral Reef</option>
+                                        <option value="mountains">Mountains</option>
+                                        <option value="wetlands">Wetlands</option>
+                                        <option value="deep-ocean">Deep Ocean</option>
+                                    </select>
+                                </div>
+                                <div class="filter-group">
+                                    <label for="date-range">Date Added</label>
+                                    <select id="date-range">
+                                        <option value="all">All Time</option>
+                                        <option value="last-week">Last Week</option>
+                                        <option value="last-month">Last Month</option>
+                                        <option value="last-year">Last Year</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Animals Table -->
+                            <div class="report-table">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>Animal</th>
+                                            <th>Scientific Name</th>
+                                            <th>Category</th>
+                                            <th>Habitat</th>
+                                            <th>Conservation Status</th>
+                                            <th>Population Trend</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <div class="animal-info">
+                                                    <img src="../img/imglion.jpg" alt="African Lion">
+                                                    <span>African Lion</span>
+                                                </div>
+                                            </td>
+                                            <td>Panthera leo</td>
+                                            <td>Mammals</td>
+                                            <td>Savanna</td>
+                                            <td><span class="status vulnerable">Vulnerable</span></td>
+                                            <td><span class="trend decreasing">Decreasing</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="animal-info">
+                                                    <img src="../img/imgeagle.jpg" alt="Bald Eagle">
+                                                    <span>Bald Eagle</span>
+                                                </div>
+                                            </td>
+                                            <td>Haliaeetus leucocephalus</td>
+                                            <td>Birds</td>
+                                            <td>Mountains</td>
+                                            <td><span class="status least-concern">Least Concern</span></td>
+                                            <td><span class="trend increasing">Increasing</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="animal-info">
+                                                    <img src="../img/imgfrog.jpg" alt="Poison Dart Frog">
+                                                    <span>Poison Dart Frog</span>
+                                                </div>
+                                            </td>
+                                            <td>Dendrobatidae</td>
+                                            <td>Amphibians</td>
+                                            <td>Rainforest</td>
+                                            <td><span class="status critical">Critically Endangered</span></td>
+                                            <td><span class="trend decreasing">Decreasing</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="animal-info">
+                                                    <img src="../img/imgshark.jpg" alt="Reef Shark">
+                                                    <span>Reef Shark</span>
+                                                </div>
+                                            </td>
+                                            <td>Carcharhinus melanopterus</td>
+                                            <td>Fish</td>
+                                            <td>Coral Reef</td>
+                                            <td><span class="status vulnerable">Vulnerable</span></td>
+                                            <td><span class="trend stable">Stable</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <div class="animal-info">
+                                                    <img src="../img/imgsnake.jpg" alt="Anaconda">
+                                                    <span>Anaconda</span>
+                                                </div>
+                                            </td>
+                                            <td>Eunectes murinus</td>
+                                            <td>Reptiles</td>
+                                            <td>Wetlands</td>
+                                            <td><span class="status least-concern">Least Concern</span></td>
+                                            <td><span class="trend stable">Stable</span></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- Pagination -->
+                            <div class="pagination">
+                                <button class="pagination-btn"><i class="ri-arrow-left-s-line"></i></button>
+                                <button class="pagination-btn active">1</button>
+                                <button class="pagination-btn">2</button>
+                                <button class="pagination-btn">3</button>
+                                <button class="pagination-btn">4</button>
+                                <button class="pagination-btn">5</button>
+                                <button class="pagination-btn"><i class="ri-arrow-right-s-line"></i></button>
+                            </div>
+                        </div>
+
+                        <!-- Other report tabs would go here -->
+                        <div class="report-tab" id="conservation-report">
+                            <!-- Conservation report content -->
+                            <div class="report-header">
+                                <h2>Conservation Programs Report</h2>
+                                <div class="report-actions">
+                                    <button class="action-button secondary">
+                                        <i class="ri-filter-line"></i> Filter
+                                    </button>
+                                    <button class="action-button secondary">
+                                        <i class="ri-download-line"></i> Export
+                                    </button>
+                                    <button class="action-button primary">
+                                        <i class="ri-refresh-line"></i> Refresh
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Conservation report content would go here -->
+                        </div>
+
+                        <div class="report-tab" id="users-report">
+                            <!-- Users report content -->
+                            <div class="report-header">
+                                <h2>Users Report</h2>
+                                <div class="report-actions">
+                                    <button class="action-button secondary">
+                                        <i class="ri-filter-line"></i> Filter
+                                    </button>
+                                    <button class="action-button secondary">
+                                        <i class="ri-download-line"></i> Export
+                                    </button>
+                                    <button class="action-button primary">
+                                        <i class="ri-refresh-line"></i> Refresh
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Users report content would go here -->
+                        </div>
+
+                        <div class="report-tab" id="activity-report">
+                            <!-- Activity report content -->
+                            <div class="report-header">
+                                <h2>Activity Report</h2>
+                                <div class="report-actions">
+                                    <button class="action-button secondary">
+                                        <i class="ri-filter-line"></i> Filter
+                                    </button>
+                                    <button class="action-button secondary">
+                                        <i class="ri-download-line"></i> Export
+                                    </button>
+                                    <button class="action-button primary">
+                                        <i class="ri-refresh-line"></i> Refresh
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Activity report content would go here -->
+                        </div>
+
+                        <div class="report-tab" id="custom-report">
+                            <!-- Custom report content -->
+                            <div class="report-header">
+                                <h2>Custom Reports</h2>
+                                <div class="report-actions">
+                                    <button class="action-button primary">
+                                        <i class="ri-add-line"></i> Create New Report
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Custom report content would go here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="/Main/in/Main menu/dashboard/dashboard.js"></script>
+    <script src="reports.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
+    <link rel="stylesheet" href="/Main/out/style.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <title>Animal Library Management System</title>
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="ri-bard-fill"></i>
+                <h2>Animal Library</h2>
+            </div>
+
+            <div class="menu">
+                <h3>MAIN MENU</h3>
+                <ul>
+                    <li class="active">
+                        <a href="dashboard.html"><i class="ri-dashboard-line"></i> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="/Main/in/Main menu/animal/animals.html"><i class="ri-bear-smile-line"></i> Animals</a>
+                    </li>
+                    <li>
+                        <a href="/Main/in/Main menu/categories/categories.html"><i class="ri-folder-line"></i>
+                            Categories</a>
+                    </li>
+                    <li>
+                        <a href="/Main/in/Main menu/habitats/habitats.html"><i class="ri-earth-line"></i> Habitats</a>
+                    </li>
+                    <li>
+                        <a href="/Main/in/Main menu/conservation/conservation.html"><i class="ri-shield-star-line"></i>
+                            Conservation</a>
+                    </li>
+                </ul>
+
+                <h3>MANAGEMENT</h3>
+                <ul>
+                    <li>
+                        <a href="/Main/in/Management/users/users.html"><i class="ri-user-line"></i> Users</a>
+                    </li>
+                    <li>
+                        <a href="/Main/in/Management/setting/settings.html"><i class="ri-settings-line"></i>
+                            Settings</a>
+                    </li>
+                    <li>
+                        <a href="/Main/in/Management/report/reports.html"><i class="ri-file-chart-line"></i> Reports</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="logout">
+                <a href="/Main/out/login.html"><i class="ri-logout-box-line"></i> Logout</a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Top Navigation Bar -->
+            <nav class="top-nav">
+                <div class="search-bar">
+                    <i class="ri-search-line"></i>
+                    <input type="text" placeholder="Search for animals, categories...">
+                </div>
+
+                <div class="user-area">
+                    <div class="notifications">
+                        <i class="ri-notification-3-line"></i>
+                        <span class="badge">3</span>
+                    </div>
+                    <div class="user-profile">
+                        <img src="../img/imgLogin.jpg" alt="User Profile">
+                        <div class="user-info">
+                            <h4>Admin User</h4>
+                            <p>Administrator</p>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <div class="page-header">
+                    <h1>Dashboard</h1>
+                    <p>Welcome to the Animal Library Management System</p>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="stats-container">
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: rgba(163, 230, 53, 0.2);">
+                            <i class="ri-bear-smile-line" style="color: #a3e635;"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Total Animals</h3>
+                            <h2>1,248</h2>
+                            <p><span class="up"><i class="ri-arrow-up-line"></i> 12%</span> from last month</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: rgba(45, 137, 168, 0.2);">
+                            <i class="ri-folder-line" style="color: #2d89a8;"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Categories</h3>
+                            <h2>42</h2>
+                            <p><span class="up"><i class="ri-arrow-up-line"></i> 5%</span> from last month</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: rgba(248, 54, 0, 0.2);">
+                            <i class="ri-shield-star-line" style="color: #f83600;"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Endangered</h3>
+                            <h2>186</h2>
+                            <p><span class="down"><i class="ri-arrow-down-line"></i> 3%</span> from last month</p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: rgba(15, 216, 80, 0.2);">
+                            <i class="ri-user-line" style="color: #0fd850;"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3>Active Users</h3>
+                            <h2>324</h2>
+                            <p><span class="up"><i class="ri-arrow-up-line"></i> 18%</span> from last month</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Animals & Activity -->
+                <div class="dashboard-grid">
+                    <!-- Recent Animals -->
+                    <div class="recent-animals">
+                        <div class="section-header">
+                            <h2>Recently Added Animals</h2>
+                            <a href="/Main/in/Main menu/animal/animals.html" class="view-all">View All <i
+                                    class="ri-arrow-right-line"></i></a>
+                        </div>
+
+                        <div class="animals-table">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Animal</th>
+                                        <th>Species</th>
+                                        <th>Category</th>
+                                        <th>Status</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="animal-info">
+                                                <img src="../img/imglion.jpg" alt="Lion">
+                                                <span>African Lion</span>
+                                            </div>
+                                        </td>
+                                        <td>Panthera leo</td>
+                                        <td>Mammals</td>
+                                        <td><span class="status vulnerable">Vulnerable</span></td>
+                                        <td>
+                                            <div class="actions">
+                                                <button class="action-btn edit"><i class="ri-edit-line"></i></button>
+                                                <button class="action-btn view"><i class="ri-eye-line"></i></button>
+                                                <button class="action-btn delete"><i
+                                                        class="ri-delete-bin-line"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="animal-info">
+                                                <img src="../img/imgeagle.jpg" alt="Eagle">
+                                                <span>Bald Eagle</span>
+                                            </div>
+                                        </td>
+                                        <td>Haliaeetus leucocephalus</td>
+                                        <td>Birds</td>
+                                        <td><span class="status least-concern">Least Concern</span></td>
+                                        <td>
+                                            <div class="actions">
+                                                <button class="action-btn edit"><i class="ri-edit-line"></i></button>
+                                                <button class="action-btn view"><i class="ri-eye-line"></i></button>
+                                                <button class="action-btn delete"><i
+                                                        class="ri-delete-bin-line"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="animal-info">
+                                                <img src="../img/imgshark.jpg" alt="Shark">
+                                                <span>Great White Shark</span>
+                                            </div>
+                                        </td>
+                                        <td>Carcharodon carcharias</td>
+                                        <td>Fish</td>
+                                        <td><span class="status endangered">Endangered</span></td>
+                                        <td>
+                                            <div class="actions">
+                                                <button class="action-btn edit"><i class="ri-edit-line"></i></button>
+                                                <button class="action-btn view"><i class="ri-eye-line"></i></button>
+                                                <button class="action-btn delete"><i
+                                                        class="ri-delete-bin-line"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="animal-info">
+                                                <img src="../img/imgfrog.jpg" alt="Frog">
+                                                <span>Poison Dart Frog</span>
+                                            </div>
+                                        </td>
+                                        <td>Dendrobatidae</td>
+                                        <td>Amphibians</td>
+                                        <td><span class="status critical">Critically Endangered</span></td>
+                                        <td>
+                                            <div class="actions">
+                                                <button class="action-btn edit"><i class="ri-edit-line"></i></button>
+                                                <button class="action-btn view"><i class="ri-eye-line"></i></button>
+                                                <button class="action-btn delete"><i
+                                                        class="ri-delete-bin-line"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="animal-info">
+                                                <img src="../img/imgsnake.jpg" alt="Snake">
+                                                <span>King Cobra</span>
+                                            </div>
+                                        </td>
+                                        <td>Ophiophagus hannah</td>
+                                        <td>Reptiles</td>
+                                        <td><span class="status vulnerable">Vulnerable</span></td>
+                                        <td>
+                                            <div class="actions">
+                                                <button class="action-btn edit"><i class="ri-edit-line"></i></button>
+                                                <button class="action-btn view"><i class="ri-eye-line"></i></button>
+                                                <button class="action-btn delete"><i
+                                                        class="ri-delete-bin-line"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Activity & Quick Actions -->
+                    <div class="side-content">
+                        <!-- Recent Activity -->
+                        <div class="recent-activity">
+                            <div class="section-header">
+                                <h2>Recent Activity</h2>
+                            </div>
+
+                            <div class="activity-list">
+                                <div class="activity-item">
+                                    <div class="activity-icon" style="background: rgba(163, 230, 53, 0.2);">
+                                        <i class="ri-add-line" style="color: #a3e635;"></i>
+                                    </div>
+                                    <div class="activity-details">
+                                        <p><strong>Admin</strong> added <span>Great White Shark</span></p>
+                                        <span class="time">2 hours ago</span>
+                                    </div>
+                                </div>
+
+                                <div class="activity-item">
+                                    <div class="activity-icon" style="background: rgba(45, 137, 168, 0.2);">
+                                        <i class="ri-edit-line" style="color: #2d89a8;"></i>
+                                    </div>
+                                    <div class="activity-details">
+                                        <p><strong>John</strong> updated <span>African Lion</span> status</p>
+                                        <span class="time">5 hours ago</span>
+                                    </div>
+                                </div>
+
+                                <div class="activity-item">
+                                    <div class="activity-icon" style="background: rgba(248, 54, 0, 0.2);">
+                                        <i class="ri-delete-bin-line" style="color: #f83600;"></i>
+                                    </div>
+                                    <div class="activity-details">
+                                        <p><strong>Sarah</strong> removed <span>Tasmanian Tiger</span></p>
+                                        <span class="time">Yesterday</span>
+                                    </div>
+                                </div>
+
+                                <div class="activity-item">
+                                    <div class="activity-icon" style="background: rgba(15, 216, 80, 0.2);">
+                                        <i class="ri-user-add-line" style="color: #0fd850;"></i>
+                                    </div>
+                                    <div class="activity-details">
+                                        <p><strong>System</strong> added <span>5 new users</span></p>
+                                        <span class="time">2 days ago</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Quick Actions -->
+                        <div class="quick-actions">
+                            <div class="section-header">
+                                <h2>Quick Actions</h2>
+                            </div>
+
+                            <div class="actions-grid">
+                                <a href="/animals.html?action=add" class="action-card">
+                                    <i class="ri-add-circle-line"></i>
+                                    <span>Add Animal</span>
+                                </a>
+
+                                <a href="categories.html?action=add" class="action-card">
+                                    <i class="ri-folder-add-line"></i>
+                                    <span>New Category</span>
+                                </a>
+
+                                <a href="reports.html" class="action-card">
+                                    <i class="ri-file-chart-line"></i>
+                                    <span>Generate Report</span>
+                                </a>
+
+                                <a href="settings.html" class="action-card">
+                                    <i class="ri-settings-line"></i>
+                                    <span>Settings</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Conservation Status Chart -->
+                        <div class="conservation-chart">
+                            <div class="section-header">
+                                <h2>Conservation Status</h2>
+                            </div>
+
+                            <div class="chart-container">
+                                <div class="status-bars">
+                                    <div class="status-item">
+                                        <div class="status-label">
+                                            <span class="dot least-concern-dot"></span>
+                                            <span>Least Concern</span>
+                                        </div>
+                                        <div class="status-bar">
+                                            <div class="bar-fill least-concern-fill" style="width: 45%;"></div>
+                                        </div>
+                                        <span class="status-percent">45%</span>
+                                    </div>
+
+                                    <div class="status-item">
+                                        <div class="status-label">
+                                            <span class="dot vulnerable-dot"></span>
+                                            <span>Vulnerable</span>
+                                        </div>
+                                        <div class="status-bar">
+                                            <div class="bar-fill vulnerable-fill" style="width: 25%;"></div>
+                                        </div>
+                                        <span class="status-percent">25%</span>
+                                    </div>
+
+                                    <div class="status-item">
+                                        <div class="status-label">
+                                            <span class="dot endangered-dot"></span>
+                                            <span>Endangered</span>
+                                        </div>
+                                        <div class="status-bar">
+                                            <div class="bar-fill endangered-fill" style="width: 18%;"></div>
+                                        </div>
+                                        <span class="status-percent">18%</span>
+                                    </div>
+
+                                    <div class="status-item">
+                                        <div class="status-label">
+                                            <span class="dot critical-dot"></span>
+                                            <span>Critically Endangered</span>
+                                        </div>
+                                        <div class="status-bar">
+                                            <div class="bar-fill critical-fill" style="width: 12%;"></div>
+                                        </div>
+                                        <span class="status-percent">12%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="dashboard.js"></script>
+
+</body>
+
+</html>
