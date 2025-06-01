@@ -675,3 +675,29 @@
     grid-template-columns: 1fr;
   }
 }
+/* Ensure search-bar styles are present in habitats.css */
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    padding: 8px 15px;
+    width: 400px;
+}
+
+.search-bar i {
+    color: #a3a3a3;
+    margin-right: 10px;
+}
+
+.search-bar input {
+    background: transparent;
+    border: none;
+    color: #fff;
+    width: 100%;
+    font-size: 14px;
+}
+
+.search-bar input::placeholder {
+    color: #a3a3a3;
+}

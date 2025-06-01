@@ -66,16 +66,16 @@
         <!-- Main Content Area -->
         <main class="main-content">
             <!-- Top Navigation Bar -->
-            <nav class="top-nav">
-                <div class="search-bar">
-                    <i class="ri-search-line"></i>
-                    <input type="text" placeholder="Search for animals...">
-                </div>
-
+        
+                  <nav class="top-nav">
+       <div class="search-bar">
+           <i class="ri-search-line"></i>
+           <input type="text" placeholder="Search for animals...">
+       </div>
                 <div class="user-area">
                     <div class="notifications">
                         <i class="ri-notification-3-line"></i>
-                        <span class="badge">3</span>
+                        <span class="badge"></span>
                     </div>
                     <div class="user-profile">
                         <img src="../img/imgLogin.jpg" alt="User Profile">
@@ -97,41 +97,64 @@
                 <!-- Action Bar -->
                 <div class="action-bar">
                     <div class="filters">
-                        <select id="category-filter">
-                            <option value="">All Categories</option>
-                            <option value="mammals">Mammals</option>
-                            <option value="birds">Birds</option>
-                            <option value="reptiles">Reptiles</option>
-                            <option value="amphibians">Amphibians</option>
-                            <option value="fish">Fish</option>
-                            <option value="invertebrates">Invertebrates</option>
-                        </select>
+<select id="category-filter">
+    <option value="">Chọn loài</option>
+    <option value="Bò sát">Bò sát</option>
+    <option value="Cá biển">Cá biển</option>
+    <option value="Cá nước ngọt">Cá nước ngọt</option>
+    <option value="Chim">Chim</option>
+    <option value="Lưỡng cư">Lưỡng cư</option>
+    <option value="Thân mềm">Thân mềm</option>
+    <option value="Thú">Thú</option>
+</select>
 
-                        <select id="status-filter">
-                            <option value="">All Statuses</option>
-                            <option value="least-concern">Least Concern</option>
-                            <option value="vulnerable">Vulnerable</option>
-                            <option value="endangered">Endangered</option>
-                            <option value="critical">Critically Endangered</option>
-                        </select>
+<select id="status-filter">
+    <option value="">Chọn mức độ bảo tồn</option>
+    <option value="Tuyệt chủng" style="color: #FF0000;">Tuyệt chủng</option>
+    <option value="Nguy cấp" style="color: #FF6347;">Nguy cấp</option>
+    <option value="Nguy hiểm" style="color: #FFA500;">Nguy hiểm</option>
+    <option value="Bị đe dọa" style="color: #FFFF00;">Bị đe dọa</option>
+    <option value="Ở mức gần nguy cơ" style="color: #ADFF2F;">Ở mức gần nguy cơ</option>
+    <option value="Ít quan tâm" style="color: #008000;">Ít quan tâm</option>
+    <option value="Thiếu dữ liệu" style="color: #808080;">Thiếu dữ liệu</option>
+    <option value="Chưa đánh giá" style="color: #808080;">Chưa đánh giá</option>
+</select>
 
-                        <select id="habitat-filter">
-                            <option value="">All Habitats</option>
-                            <option value="terrestrial">Terrestrial</option>
-                            <option value="aquatic">Aquatic</option>
-                            <option value="aerial">Aerial</option>
-                        </select>
-                    </div>
+<select id="habitat-filter">
+<option value="">Chọn môi trường sống</option>
+<option value="Vùng đất khô (cát, đồi)">Vùng đất khô (cát, đồi)</option>
+<option value="Ven sông, ao hồ">Ven sông, ao hồ</option>
+<option value="Vùng núi đá vôi">Vùng núi đá vôi</option>
+<option value="Biển khơi">Biển khơi</option>
+<option value="Rạn san hô">Rạn san hô</option>
+<option value="Đầm phá ven biển">Đầm phá ven biển</option>
+<option value="Cửa sông nước lợ">Cửa sông nước lợ</option>
+<option value="Sông lớn và phụ lưu">Sông lớn và phụ lưu</option>
+<option value="Hồ tự nhiên và hồ thủy điện">Hồ tự nhiên và hồ thủy điện</option>
+<option value="Suối vùng núi">Suối vùng núi</option>
+<option value="Rừng rậm nhiệt đới và cận nhiệt">Rừng rậm nhiệt đới và cận nhiệt</option>
+<option value="Đầm lầy và hồ nước">Đầm lầy và hồ nước</option>
+<option value="Vùng nông thôn trống trải">Vùng nông thôn trống trải</option>
+<option value="Vùng ven biển">Vùng ven biển</option>
+<option value="Rừng ẩm nhiệt đới">Rừng ẩm nhiệt đới</option>
+<option value="Ven suối, ao hồ">Ven suối, ao hồ</option>
+<option value="Đầm lầy ven biển">Đầm lầy ven biển</option>
+<option value="Đồng ruộng ngập nước">Đồng ruộng ngập nước</option>
+<option value="Đáy biển cát hoặc đá">Đáy biển cát hoặc đá</option>
+<option value="Suối và hang động nước ngọt">Suối và hang động nước ngọt</option>
+<option value="Vùng triều">Vùng triều</option>
+<option value="Rừng nguyên sinh và thứ sinh">Rừng nguyên sinh và thứ sinh</option>
+<option value="Núi cao">Núi cao</option>
+<option value="Đồng cỏ và đồng cỏ chăn thả">Đồng cỏ và đồng cỏ chăn thả</option>
+<option value="Đồng cỏ và nông thôn">Đồng cỏ và nông thôn</option>
 
-                    <div class="actions">
-                        <button id="export-btn" class="action-button secondary">
-                            <i class="ri-download-line"></i> Export
-                        </button>
-                        <button id="add-animal-btn" class="action-button primary">
-                            <i class="ri-add-line"></i> Add Animal
-                        </button>
-                    </div>
-                </div>
+</select>
+    <input type="text" id="search-animals" placeholder="Tìm kiếm động vật..." style="padding: 8px 15px; border-radius: 8px; border: none; background-color: #2a2a2a; color: #fff; width: 200px;">
+  </div>
+  <div class="actions">
+    <button class="action-button primary" id="add-animal-btn">Add Animal</button>
+  </div>
+</div>
 
                 <!-- Animals Grid/List View Toggle -->
                 <div class="view-toggle">
@@ -143,346 +166,227 @@
                     </button>
                 </div>
 
-                <!-- Animals Grid View -->
-                <div class="animals-grid active-view">
-                    <div class="animal-card">
-                        <div class="animal-image">
-                            <img src="../img/imglion.jpg" alt="African Lion">
-                            <span class="status vulnerable">Vulnerable</span>
-                        </div>
-                        <div class="animal-details">
-                            <h3>African Lion</h3>
-                            <p class="scientific-name">Panthera leo</p>
-                            <div class="animal-meta">
-                                <span><i class="ri-folder-line"></i> Mammals</span>
-                                <span><i class="ri-earth-line"></i> Africa</span>
-                            </div>
-                            <div class="card-actions">
-                                <button class="card-btn view"><i class="ri-eye-line"></i></button>
-                                <button class="card-btn edit"><i class="ri-edit-line"></i></button>
-                                <button class="card-btn delete"><i class="ri-delete-bin-line"></i></button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="animal-card">
-                        <div class="animal-image">
-                            <img src="../img/imgeagle.jpg" alt="Bald Eagle">
-                            <span class="status least-concern">Least Concern</span>
-                        </div>
-                        <div class="animal-details">
-                            <h3>Bald Eagle</h3>
-                            <p class="scientific-name">Haliaeetus leucocephalus</p>
-                            <div class="animal-meta">
-                                <span><i class="ri-folder-line"></i> Birds</span>
-                                <span><i class="ri-earth-line"></i> North America</span>
-                            </div>
-                            <div class="card-actions">
-                                <button class="card-btn view"><i class="ri-eye-line"></i></button>
-                                <button class="card-btn edit"><i class="ri-edit-line"></i></button>
-                                <button class="card-btn delete"><i class="ri-delete-bin-line"></i></button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="animal-card">
-                        <div class="animal-image">
-                            <img src="../img/imgshark.jpg" alt="Great White Shark">
-                            <span class="status endangered">Endangered</span>
-                        </div>
-                        <div class="animal-details">
-                            <h3>Great White Shark</h3>
-                            <p class="scientific-name">Carcharodon carcharias</p>
-                            <div class="animal-meta">
-                                <span><i class="ri-folder-line"></i> Fish</span>
-                                <span><i class="ri-earth-line"></i> Oceans</span>
-                            </div>
-                            <div class="card-actions">
-                                <button class="card-btn view"><i class="ri-eye-line"></i></button>
-                                <button class="card-btn edit"><i class="ri-edit-line"></i></button>
-                                <button class="card-btn delete"><i class="ri-delete-bin-line"></i></button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="animal-card">
-                        <div class="animal-image">
-                            <img src="../img/imgfrog.jpg" alt="Poison Dart Frog">
-                            <span class="status critical">Critically Endangered</span>
-                        </div>
-                        <div class="animal-details">
-                            <h3>Poison Dart Frog</h3>
-                            <p class="scientific-name">Dendrobatidae</p>
-                            <div class="animal-meta">
-                                <span><i class="ri-folder-line"></i> Amphibians</span>
-                                <span><i class="ri-earth-line"></i> South America</span>
-                            </div>
-                            <div class="card-actions">
-                                <button class="card-btn view"><i class="ri-eye-line"></i></button>
-                                <button class="card-btn edit"><i class="ri-edit-line"></i></button>
-                                <button class="card-btn delete"><i class="ri-delete-bin-line"></i></button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="animal-card">
-                        <div class="animal-image">
-                            <img src="../img/imgsnake.jpg" alt="King Cobra">
-                            <span class="status vulnerable">Vulnerable</span>
-                        </div>
-                        <div class="animal-details">
-                            <h3>King Cobra</h3>
-                            <p class="scientific-name">Ophiophagus hannah</p>
-                            <div class="animal-meta">
-                                <span><i class="ri-folder-line"></i> Reptiles</span>
-                                <span><i class="ri-earth-line"></i> Asia</span>
-                            </div>
-                            <div class="card-actions">
-                                <button class="card-btn view"><i class="ri-eye-line"></i></button>
-                                <button class="card-btn edit"><i class="ri-edit-line"></i></button>
-                                <button class="card-btn delete"><i class="ri-delete-bin-line"></i></button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="animal-card">
-                        <div class="animal-image">
-                            <img src="../img/imgjellyfish.jpg" alt="Box Jellyfish">
-                            <span class="status least-concern">Least Concern</span>
-                        </div>
-                        <div class="animal-details">
-                            <h3>Box Jellyfish</h3>
-                            <p class="scientific-name">Cubozoa</p>
-                            <div class="animal-meta">
-                                <span><i class="ri-folder-line"></i> Invertebrates</span>
-                                <span><i class="ri-earth-line"></i> Oceans</span>
-                            </div>
-                            <div class="card-actions">
-                                <button class="card-btn view"><i class="ri-eye-line"></i></button>
-                                <button class="card-btn edit"><i class="ri-edit-line"></i></button>
-                                <button class="card-btn delete"><i class="ri-delete-bin-line"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+<div class="animals-grid active-view">
+    <!-- Để trống, JS sẽ render động vật ở đây -->
+</div>
                 <!-- Animals List View (Hidden by default) -->
                 <div class="animals-list">
                     <table>
                         <thead>
                             <tr>
-                                <th>Animal</th>
-                                <th>Scientific Name</th>
-                                <th>Category</th>
-                                <th>Habitat</th>
-                                <th>Status</th>
+                                <th>Tên Động Vật</th>
+                                <th>Tên Khoa Học</th>
+                                <th>Loài</th>
+                                <th>Môi trường sống</th>
+                                <th>Tình trạng bảo tồn</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <div class="animal-info">
-                                        <img src="../img/imglion.jpg" alt="Lion">
-                                        <span>African Lion</span>
-                                    </div>
-                                </td>
-                                <td>Panthera leo</td>
-                                <td>Mammals</td>
-                                <td>Africa</td>
-                                <td><span class="status vulnerable">Vulnerable</span></td>
-                                <td>
-                                    <div class="actions">
-                                        <button class="action-btn view"><i class="ri-eye-line"></i></button>
-                                        <button class="action-btn edit"><i class="ri-edit-line"></i></button>
-                                        <button class="action-btn delete"><i class="ri-delete-bin-line"></i></button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="animal-info">
-                                        <img src="../img/imgeagle.jpg" alt="Eagle">
-                                        <span>Bald Eagle</span>
-                                    </div>
-                                </td>
-                                <td>Haliaeetus leucocephalus</td>
-                                <td>Birds</td>
-                                <td>North America</td>
-                                <td><span class="status least-concern">Least Concern</span></td>
-                                <td>
-                                    <div class="actions">
-                                        <button class="action-btn view"><i class="ri-eye-line"></i></button>
-                                        <button class="action-btn edit"><i class="ri-edit-line"></i></button>
-                                        <button class="action-btn delete"><i class="ri-delete-bin-line"></i></button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="animal-info">
-                                        <img src="../img/imgshark.jpg" alt="Shark">
-                                        <span>Great White Shark</span>
-                                    </div>
-                                </td>
-                                <td>Carcharodon carcharias</td>
-                                <td>Fish</td>
-                                <td>Oceans</td>
-                                <td><span class="status endangered">Endangered</span></td>
-                                <td>
-                                    <div class="actions">
-                                        <button class="action-btn view"><i class="ri-eye-line"></i></button>
-                                        <button class="action-btn edit"><i class="ri-edit-line"></i></button>
-                                        <button class="action-btn delete"><i class="ri-delete-bin-line"></i></button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="animal-info">
-                                        <img src="../img/imgfrog.jpg" alt="Frog">
-                                        <span>Poison Dart Frog</span>
-                                    </div>
-                                </td>
-                                <td>Dendrobatidae</td>
-                                <td>Amphibians</td>
-                                <td>South America</td>
-                                <td><span class="status critical">Critically Endangered</span></td>
-                                <td>
-                                    <div class="actions">
-                                        <button class="action-btn view"><i class="ri-eye-line"></i></button>
-                                        <button class="action-btn edit"><i class="ri-edit-line"></i></button>
-                                        <button class="action-btn delete"><i class="ri-delete-bin-line"></i></button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="animal-info">
-                                        <img src="../img/imgsnake.jpg" alt="Snake">
-                                        <span>King Cobra</span>
-                                    </div>
-                                </td>
-                                <td>Ophiophagus hannah</td>
-                                <td>Reptiles</td>
-                                <td>Asia</td>
-                                <td><span class="status vulnerable">Vulnerable</span></td>
-                                <td>
-                                    <div class="actions">
-                                        <button class="action-btn view"><i class="ri-eye-line"></i></button>
-                                        <button class="action-btn edit"><i class="ri-edit-line"></i></button>
-                                        <button class="action-btn delete"><i class="ri-delete-bin-line"></i></button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="animal-info">
-                                        <img src="../img/imgjellyfish.jpg" alt="Jellyfish">
-                                        <span>Box Jellyfish</span>
-                                    </div>
-                                </td>
-                                <td>Cubozoa</td>
-                                <td>Invertebrates</td>
-                                <td>Oceans</td>
-                                <td><span class="status least-concern">Least Concern</span></td>
-                                <td>
-                                    <div class="actions">
-                                        <button class="action-btn view"><i class="ri-eye-line"></i></button>
-                                        <button class="action-btn edit"><i class="ri-edit-line"></i></button>
-                                        <button class="action-btn delete"><i class="ri-delete-bin-line"></i></button>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
+<tbody>
+    <!-- Để trống, JS sẽ render động vật ở đây -->
+</tbody>
                     </table>
                 </div>
 
-                <!-- Pagination -->
-                <div class="pagination">
-                    <button class="page-btn prev"><i class="ri-arrow-left-s-line"></i></button>
-                    <button class="page-btn active">1</button>
-                    <button class="page-btn">2</button>
-                    <button class="page-btn">3</button>
-                    <span class="page-ellipsis">...</span>
-                    <button class="page-btn">10</button>
-                    <button class="page-btn next"><i class="ri-arrow-right-s-line"></i></button>
+
+                <div id="add-animal-modal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Thêm Động Vật Mới</h2>
+            <button class="close-modal"><i class="ri-close-line"></i></button>
+        </div>
+        <div class="modal-body">
+            <form id="add-animal-form" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="animal-name">Tên Động Vật</label>
+                    <input type="text" id="animal-name" name="animal_name" required>
                 </div>
-            </div>
-        </main>
-    </div>
-
-    <!-- Add Animal Modal (Hidden by default) -->
-    <div class="modal" id="add-animal-modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Add New Animal</h2>
-                <button class="close-modal"><i class="ri-close-line"></i></button>
-            </div>
-            <div class="modal-body">
-                <form id="add-animal-form">
+                <div class="form-group">
+                    <label for="scientific-name">Tên Khoa Học</label>
+                    <input type="text" id="scientific-name" name="scientific_name" required>
+                </div>
+                <div class="form-row">
                     <div class="form-group">
-                        <label for="animal-name">Animal Name</label>
-                        <input type="text" id="animal-name" placeholder="Enter animal name" required>
+                        <label for="category">Loài</label>
+                        <select id="category" name="category" required>
+                            <option value="">Chọn Loài</option>
+                            <option value="Thú">Thú</option>
+                            <option value="Chim">Chim</option>
+                            <option value="Bò sát">Bò sát</option>
+                            <option value="Lưỡng cư">Lưỡng cư</option>
+                            <option value="Cá">Cá</option>
+                            <option value="Thân mềm">Thân mềm</option>
+                        </select>
                     </div>
-
                     <div class="form-group">
-                        <label for="scientific-name">Scientific Name</label>
-                        <input type="text" id="scientific-name" placeholder="Enter scientific name" required>
-                    </div>
+                        <label for="conservation-status">Trạng Thái Bảo Tồn</label>
+                        <select id="conservation-status" name="status" required>
+                            <option value="">Chọn Trạng Thái</option>
+                            <option value="Ít quan tâm">Ít quan tâm</option>
+                            <option value="Bị đe dọa">Bị đe dọa</option>
+                            <option value="Nguy cấp">Nguy cấp</option>
+                            <option value="Nguy hiểm">Nguy hiểm</option>
+                            <option value="Tuyệt chủng">Tuyệt chủng</option>
+                            <option value="Thiếu dữ liệu">Thiếu dữ liệu</option>
+                            <option value="Chưa đánh giá">Chưa đánh giá</option>
 
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="category">Category</label>
-                            <select id="category" required>
-                                <option value="">Select Category</option>
-                                <option value="mammals">Mammals</option>
-                                <option value="birds">Birds</option>
-                                <option value="reptiles">Reptiles</option>
-                                <option value="amphibians">Amphibians</option>
-                                <option value="fish">Fish</option>
-                                <option value="invertebrates">Invertebrates</option>
-                            </select>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="conservation-status">Conservation Status</label>
-                            <select id="conservation-status" required>
-                                <option value="">Select Status</option>
-                                <option value="least-concern">Least Concern</option>
-                                <option value="vulnerable">Vulnerable</option>
-                                <option value="endangered">Endangered</option>
-                                <option value="critical">Critically Endangered</option>
-                            </select>
-                        </div>
+                        </select>
                     </div>
-
-                    <div class="form-group">
-                        <label for="habitat">Habitat</label>
-                        <input type="text" id="habitat" placeholder="Enter habitat">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="description">Description</label>
-                        <textarea id="description" rows="4" placeholder="Enter description"></textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="animal-image">Upload Image</label>
-                        <input type="file" id="animal-image" accept="image/*">
-                    </div>
-
-                    <div class="form-actions">
-                        <button type="button" class="cancel-btn">Cancel</button>
-                        <button type="submit" class="submit-btn">Add Animal</button>
-                    </div>
-                </form>
-            </div>
+                </div>
+                <div class="form-group">
+                    <label for="habitat">Môi Trường Sống</label>
+                    <select id="habitat" name="habitat" required>
+                        <option value="">Chọn Môi Trường Sống</option>
+                        <option value="Vùng đất khô (cát, đồi)">Vùng đất khô (cát, đồi)</option>
+                        <option value="Ven sông, ao hồ">Ven sông, ao hồ</option>
+                        <option value="Vùng núi đá vôi">Vùng núi đá vôi</option>
+                        <option value="Biển khơi">Biển khơi</option>
+                        <option value="Rạn san hô">Rạn san hô</option>
+                        <option value="Đầm phá ven biển">Đầm phá ven biển</option>
+                        <option value="Cửa sông nước lợ">Cửa sông nước lợ</option>
+                        <option value="Sông lớn và phụ lưu">Sông lớn và phụ lưu</option>
+                        <option value="Hồ tự nhiên và hồ thủy điện">Hồ tự nhiên và hồ thủy điện</option>
+                        <option value="Suối vùng núi">Suối vùng núi</option>
+                        <option value="Rừng rậm nhiệt đới và cận nhiệt">Rừng rậm nhiệt đới và cận nhiệt</option>
+                        <option value="Đầm lầy và hồ nước">Đầm lầy và hồ nước</option>
+                        <option value="Vùng nông thôn trống trải">Vùng nông thôn trống trải</option>
+                        <option value="Vùng ven biển">Vùng ven biển</option>
+                        <option value="Rừng ẩm nhiệt đới">Rừng ẩm nhiệt đới</option>
+                        <option value="Ven suối, ao hồ">Ven suối, ao hồ</option>
+                        <option value="Đầm lầy ven biển">Đầm lầy ven biển</option>
+                        <option value="Đồng ruộng ngập nước">Đồng ruộng ngập nước</option>
+                        <option value="Đáy biển cát hoặc đá">Đáy biển cát hoặc đá</option>
+                        <option value="Suối và hang động nước ngọt">Suối và hang động nước ngọt</option>
+                        <option value="Vùng triều">Vùng triều</option>
+                        <option value="Rừng nguyên sinh và thứ sinh">Rừng nguyên sinh và thứ sinh</option>
+                        <option value="Núi cao">Núi cao</option>
+                        <option value="Đồng cỏ và đồng cỏ chăn thả">Đồng cỏ và đồng cỏ chăn thả</option>
+                        <option value="Đồng cỏ và nông thôn">Đồng cỏ và nông thôn</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="description">Mô Tả</label>
+                    <textarea id="description" name="description"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="animal-image">Tải Lên Hình Ảnh</label>
+                    <input type="file" id="animal-image" name="image" accept="image/*">
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="cancel-btn">Hủy</button>
+                    <button type="submit" class="submit-btn">Thêm Động Vật</button>
+                </div>
+            </form>
         </div>
     </div>
-
+</div>
+<!-- Modal Xem Chi Tiết Động Vật -->
+<div id="view-animal-modal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Chi tiết động vật</h2>
+      <button class="close-modal"><i class="ri-close-line"></i></button>
+    </div>
+    <div class="modal-body">
+      <img id="view-animal-image" src="" alt="Animal Image" style="width:100%;max-width:300px;display:block;margin:auto;">
+      <h3 id="view-animal-name"></h3>
+      <p><b>Tên khoa học:</b> <span id="view-scientific-name"></span></p>
+      <p><b>Loài:</b> <span id="view-category"></span></p>
+      <p><b>Trạng thái bảo tồn:</b> <span id="view-conservation-status"></span></p>
+      <p><b>Môi trường sống:</b> <span id="view-habitat"></span></p>
+      <p><b>Mô tả:</b> <span id="view-description"></span></p>
+    </div>
+  </div>
+</div>
+<!-- Modal Sửa Động Vật -->
+<div id="edit-animal-modal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Sửa thông tin động vật</h2>
+      <button class="close-modal"><i class="ri-close-line"></i></button>
+    </div>
+    <div class="modal-body">
+      <form id="edit-animal-form" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="edit-animal-name">Tên Động Vật</label>
+          <input type="text" id="edit-animal-name" name="animal_name" required>
+        </div>
+        <div class="form-group">
+          <label for="edit-scientific-name">Tên Khoa Học</label>
+          <input type="text" id="edit-scientific-name" name="scientific_name" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="edit-category">Loài</label>
+            <select id="edit-category" name="category" required>
+              <option value="">Chọn Loài</option>
+              <option value="Thú">Thú</option>
+              <option value="Chim">Chim</option>
+              <option value="Bò sát">Bò sát</option>
+              <option value="Lưỡng cư">Lưỡng cư</option>
+              <option value="Cá">Cá</option>
+              <option value="Thân mềm">Thân mềm</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="edit-conservation-status">Trạng Thái Bảo Tồn</label>
+            <select id="edit-conservation-status" name="status" required>
+              <option value="">Chọn Trạng Thái</option>
+              <option value="Ít quan tâm">Ít quan tâm</option>
+              <option value="Bị đe dọa">Bị đe dọa</option>
+              <option value="Nguy cấp">Nguy cấp</option>
+              <option value="Nguy hiểm">Nguy hiểm</option>
+              <option value="Tuyệt chủng">Tuyệt chủng</option>
+              <option value="Thiếu dữ liệu">Thiếu dữ liệu</option>
+              <option value="Chưa đánh giá">Chưa đánh giá</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="edit-habitat">Môi Trường Sống</label>
+          <select id="edit-habitat" name="habitat" required>
+            <option value="">Chọn Môi Trường Sống</option>
+            <option value="Vùng đất khô (cát, đồi)">Vùng đất khô (cát, đồi)</option>
+            <option value="Ven sông, ao hồ">Ven sông, ao hồ</option>
+            <option value="Vùng núi đá vôi">Vùng núi đá vôi</option>
+            <option value="Biển khơi">Biển khơi</option>
+            <option value="Rạn san hô">Rạn san hô</option>
+            <option value="Đầm phá ven biển">Đầm phá ven biển</option>
+            <option value="Cửa sông nước lợ">Cửa sông nước lợ</option>
+            <option value="Sông lớn và phụ lưu">Sông lớn và phụ lưu</option>
+            <option value="Hồ tự nhiên và hồ thủy điện">Hồ tự nhiên và hồ thủy điện</option>
+            <option value="Suối vùng núi">Suối vùng núi</option>
+            <option value="Rừng rậm nhiệt đới và cận nhiệt">Rừng rậm nhiệt đới và cận nhiệt</option>
+            <option value="Đầm lầy và hồ nước">Đầm lầy và hồ nước</option>
+            <option value="Vùng nông thôn trống trải">Vùng nông thôn trống trải</option>
+            <option value="Vùng ven biển">Vùng ven biển</option>
+            <option value="Rừng ẩm nhiệt đới">Rừng ẩm nhiệt đới</option>
+            <option value="Ven suối, ao hồ">Ven suối, ao hồ</option>
+            <option value="Đầm lầy ven biển">Đầm lầy ven biển</option>
+            <option value="Đồng ruộng ngập nước">Đồng ruộng ngập nước</option>
+            <option value="Đáy biển cát hoặc đá">Đáy biển cát hoặc đá</option>
+            <option value="Suối và hang động nước ngọt">Suối và hang động nước ngọt</option>
+            <option value="Vùng triều">Vùng triều</option>
+            <option value="Rừng nguyên sinh và thứ sinh">Rừng nguyên sinh và thứ sinh</option>
+            <option value="Núi cao">Núi cao</option>
+            <option value="Đồng cỏ và đồng cỏ chăn thả">Đồng cỏ và đồng cỏ chăn thả</option>
+            <option value="Đồng cỏ và nông thôn">Đồng cỏ và nông thôn</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="edit-description">Mô Tả</label>
+          <textarea id="edit-description" name="description"></textarea>
+        </div>
+        <div class="form-actions">
+          <button type="button" class="cancel-btn close-modal">Hủy</button>
+          <button type="submit" class="submit-btn">Lưu Thay Đổi</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
     <script src="/Main/in/Main menu/dashboard/dashboard.js"></script>
-    <script src="animals.js"></script>
+    <script src="animals.js" defer></script>
 </body>
 
 </html>

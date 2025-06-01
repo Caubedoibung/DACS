@@ -2,14 +2,17 @@ const express = require("express");
 const cors = require("cors");
 const bcrypt = require("bcrypt");
 const pool = require("./config/db");
-const userRoutes = require("./routes/user"); // Thay đổi từ userRoutes thành user
-const adminRoutes = require("./routes/admin"); // Thay đổi từ adminRoutes thành admin
+const userRoutes = require("./routes/user");
+const adminRoutes = require("./routes/admin");
+const animalRoutes = require("./routes/animals");
 
 const app = express();
-const PORT = 3000;
+const PORT = 3001;
 
 app.use(cors());
 app.use(express.json());
+app.use("/uploads", express.static("uploads"));
+app.use("/api", animalRoutes);
 
 const initDatabase = async () => {
   try {
@@ -27,9 +30,6 @@ const initDatabase = async () => {
       )
     `);
     console.log("User table created or already exists");
-
-    
-    
 
     // Tạo bảng admins
     await pool.query(`
@@ -53,6 +53,22 @@ const initDatabase = async () => {
       ["admin", "huymt0401@gmail.com", adminHashedPassword, 0, null]
     );
     console.log("Default admin created");
+
+    // Tạo bảng animals
+    await pool.query(`
+      CREATE TABLE IF NOT EXISTS animals (
+        id SERIAL PRIMARY KEY,
+        animal_name VARCHAR(255) NOT NULL,
+        scientific_name VARCHAR(255),
+        category VARCHAR(100),
+        status VARCHAR(100),
+        habitat VARCHAR(255),
+        description TEXT,
+        image_url TEXT,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      )
+    `);
+    console.log("Animals table created or already exists");
   } catch (error) {
     console.error("Error initializing database:", error);
   }
